@@ -1,0 +1,65 @@
+const { readFile } = require("../utils");
+console.log;
+module.exports = {
+  "/html/": [
+    {
+      title: "HTML",
+      collapsable: true,
+      children: readFile("html"),
+    },
+  ],
+  "/css/": [
+    {
+      title: "技术文档",
+      collapsable: true,
+      children: readFile("css"),
+    },
+  ],
+  "/javascript/": [
+    {
+      title: "JavaScript",
+      collapsable: true,
+      children: readFile("javascript"),
+    },
+  ],
+  "/react/": [
+    {
+      title: "React",
+      collapsable: true,
+      children: readFile("react"),
+    },
+  ],
+  "/vue/": [
+    {
+      title: "Vue",
+      collapsable: true,
+      children: readFile("vue"),
+    },
+  ],
+  "/webpack/": [
+    {
+      title: "Webpack",
+      collapsable: true,
+      children: readFile("webpack"),
+    },
+  ],
+  "/network/": [
+    {
+      title: "网络知识",
+      collapsable: true,
+      children: readFile("network"),
+    },
+  ],
+  "/algorithm/": [
+    {
+      title: "通用算法",
+      collapsable: true,
+      children: readFile("algorithm"),
+    },
+    {
+      title: "字符串算法",
+      collapsable: true,
+      children: readFile("algorithm/string", "/algorithm/string/"), // md文件目录和标题名称,
+    },
+  ],
+};

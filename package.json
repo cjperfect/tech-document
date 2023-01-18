@@ -1,0 +1,25 @@
+{
+  "name": "technology-review",
+  "version": "0.0.1",
+  "description": "technology-review",
+  "main": "index.js",
+  "authors": {
+    "name": "chenjiang",
+    "email": ""
+  },
+  "repository": "/blog",
+  "scripts": {
+    "start": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.9.8",
+    "@vuepress/plugin-back-to-top": "^1.9.8",
+    "@vuepress/plugin-medium-zoom": "^1.9.8",
+    "vuepress": "^1.9.7"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.7"
+  }
+}
