@@ -1,7 +1,7 @@
 <template>
   <div class="home-container">
     <div class="title">
-      <h1><span>Technology</span> document</h1>
+      <h1><span>Technology</span> Document</h1>
       <a href="archive/" class="btn">Archive</a>
     </div>
     <img src="./images/person.png" alt="" />
