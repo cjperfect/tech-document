@@ -3,7 +3,7 @@ const nav = require("./config/nav");
 const sidebar = require("./config/sidebar");
 
 module.exports = {
-  base: "/tech-document/",
+  // base: "/tech-document/",
   dest: "./docs", // 设置build输出目录
   title: "知识积累",
   description: description,
