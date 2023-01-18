@@ -7,7 +7,6 @@
     <img src="./images/person.png" alt="" />
   </div>
 </template>
-
 <script setup></script>
 
 <style lang="stylus">
@@ -36,13 +35,6 @@ header.navbar
 .home .footer
     border-top: none;
 
-
-.navbar .links
-    display: flex;
-
-.navbar .links .search-box
-    order: 2;
-    padding-left: 1.5rem;
 
 .home-container
     position: relative;

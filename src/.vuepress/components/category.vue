@@ -124,9 +124,20 @@ a.tag, a.category
   text-align: center;
   margin-bottom: 10px;
 
+a.category
+  color: #42b983;
+
+a.tag
+  color: #e7c000;
+
+a.category.active
+  background-color: #42b983;
+  color: white;
+
+a.tag.active
+  background-color: #e7c000;
+  color: white;
+
 .article
   padding-bottom: 20px;
-a.active
-  background-color: #4ba0f9;
-  color: white;
 </style>
