@@ -1,13 +1,6 @@
 const { readFile } = require("../utils");
 console.log;
 module.exports = {
-  "/html/": [
-    {
-      title: "HTML",
-      collapsable: true,
-      children: readFile("html"),
-    },
-  ],
   "/css/": [
     {
       title: "技术文档",

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>行内元素和块级元素的区别 | 知识积累</title>
+    <title>CSS Sprites图的理解 | 知识积累</title>
     <meta name="generator" content="VuePress 1.9.8">
     
     <meta name="description" content="technology-review">
@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
-    <link rel="preload" href="/assets/css/0.styles.6b741f2a.css" as="style"><link rel="preload" href="/assets/js/app.a029a270.js" as="script"><link rel="preload" href="/assets/js/2.27a37e06.js" as="script"><link rel="preload" href="/assets/js/14.4980250b.js" as="script"><link rel="preload" href="/assets/js/9.b566f953.js" as="script"><link rel="prefetch" href="/assets/js/10.429a45f7.js"><link rel="prefetch" href="/assets/js/11.69326317.js"><link rel="prefetch" href="/assets/js/12.dc3e80e4.js"><link rel="prefetch" href="/assets/js/13.319be1ed.js"><link rel="prefetch" href="/assets/js/15.22361b05.js"><link rel="prefetch" href="/assets/js/16.55969cdd.js"><link rel="prefetch" href="/assets/js/17.a60154ed.js"><link rel="prefetch" href="/assets/js/18.324084e6.js"><link rel="prefetch" href="/assets/js/19.b218484f.js"><link rel="prefetch" href="/assets/js/20.261bbe53.js"><link rel="prefetch" href="/assets/js/21.1f8e8fc9.js"><link rel="prefetch" href="/assets/js/22.edcec976.js"><link rel="prefetch" href="/assets/js/3.5c9cf04a.js"><link rel="prefetch" href="/assets/js/4.2e8c90bd.js"><link rel="prefetch" href="/assets/js/5.1ad864b5.js"><link rel="prefetch" href="/assets/js/6.8be8ed52.js"><link rel="prefetch" href="/assets/js/7.ca19e178.js"><link rel="prefetch" href="/assets/js/8.53cccd1a.js">
+    <link rel="preload" href="/assets/css/0.styles.6b741f2a.css" as="style"><link rel="preload" href="/assets/js/app.a029a270.js" as="script"><link rel="preload" href="/assets/js/2.27a37e06.js" as="script"><link rel="preload" href="/assets/js/15.22361b05.js" as="script"><link rel="preload" href="/assets/js/9.b566f953.js" as="script"><link rel="prefetch" href="/assets/js/10.429a45f7.js"><link rel="prefetch" href="/assets/js/11.69326317.js"><link rel="prefetch" href="/assets/js/12.dc3e80e4.js"><link rel="prefetch" href="/assets/js/13.319be1ed.js"><link rel="prefetch" href="/assets/js/14.4980250b.js"><link rel="prefetch" href="/assets/js/16.55969cdd.js"><link rel="prefetch" href="/assets/js/17.a60154ed.js"><link rel="prefetch" href="/assets/js/18.324084e6.js"><link rel="prefetch" href="/assets/js/19.b218484f.js"><link rel="prefetch" href="/assets/js/20.261bbe53.js"><link rel="prefetch" href="/assets/js/21.1f8e8fc9.js"><link rel="prefetch" href="/assets/js/22.edcec976.js"><link rel="prefetch" href="/assets/js/3.5c9cf04a.js"><link rel="prefetch" href="/assets/js/4.2e8c90bd.js"><link rel="prefetch" href="/assets/js/5.1ad864b5.js"><link rel="prefetch" href="/assets/js/6.8be8ed52.js"><link rel="prefetch" href="/assets/js/7.ca19e178.js"><link rel="prefetch" href="/assets/js/8.53cccd1a.js">
     <link rel="stylesheet" href="/assets/css/0.styles.6b741f2a.css">
   </head>
   <body>
@@ -19,7 +19,7 @@
   首页
 </a></div><div class="nav-item"><a href="/archive/" class="nav-link">
   文章归档
-</a></div><div class="nav-item"><a href="/css/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+</a></div><div class="nav-item"><a href="/css/" class="nav-link router-link-active">
   CSS
 </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Javascript" class="dropdown-title"><span class="title">Javascript</span> <span class="arrow down"></span></button> <button type="button" aria-label="Javascript" class="mobile-dropdown-title"><span class="title">Javascript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/javascript/" class="nav-link">
   原生JS
@@ -39,7 +39,7 @@
   首页
 </a></div><div class="nav-item"><a href="/archive/" class="nav-link">
   文章归档
-</a></div><div class="nav-item"><a href="/css/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+</a></div><div class="nav-item"><a href="/css/" class="nav-link router-link-active">
   CSS
 </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Javascript" class="dropdown-title"><span class="title">Javascript</span> <span class="arrow down"></span></button> <button type="button" aria-label="Javascript" class="mobile-dropdown-title"><span class="title">Javascript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/javascript/" class="nav-link">
   原生JS
@@ -55,7 +55,7 @@
   网络知识
 </a></div><div class="nav-item"><a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
   CSDN
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>技术文档</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/css/" aria-current="page" class="active sidebar-link">行内元素和块级元素的区别</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/css/对 CSS Sprites图的理解.html" class="sidebar-link">CSS Sprites图的理解</a></li><li><a href="/css/对line-height 的理解及其赋值方式.html" class="sidebar-link">对line-height 的理解及其赋值方式</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>技术文档</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/css/" aria-current="page" class="sidebar-link">行内元素和块级元素的区别</a></li><li><a href="/css/对 CSS Sprites图的理解.html" class="active sidebar-link">CSS Sprites图的理解</a></li><li><a href="/css/对line-height 的理解及其赋值方式.html" class="sidebar-link">对line-height 的理解及其赋值方式</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
     作者:
     <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
     分类:
@@ -63,11 +63,15 @@
     标签:
     </div> <div class="date" data-v-46893521>
     创建时间:
-    <span data-v-46893521></span></div></div> <h3 id="行内元素"><a href="#行内元素" class="header-anchor">#</a> 行内元素</h3> <ul><li>设置宽高无效；</li> <li>可以设置水平方向的 margin 和 padding 属性，不能设置垂直方向的 padding 和 margin；</li> <li>不会自动换行；</li></ul> <h3 id="块级元素"><a href="#块级元素" class="header-anchor">#</a> 块级元素</h3> <ul><li>可以设置宽高；</li> <li>设置 margin 和 padding 都有效；</li> <li>可以自动换行；</li> <li>多个块状，默认排列从上到下。</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/css/对 CSS Sprites图的理解.html">
-        CSS Sprites图的理解
+    <span data-v-46893521></span></div></div> <p>CSS Sprites 图，将一个页面涉及到的所有图片都包含到一张大图中去，然后利用 CSS 的 background-image，background-repeat，background-position 属性的组合进行背景定位。</p> <p><strong>优点：</strong></p> <ul><li>利用 CSS Sprites 能很好地减少网页的 http 请求，从而大大提高了页面的性能，这是 CSS Sprites 最大的优点；</li> <li>CSS Sprites 能减少图片的字节，把 3 张图片合并成 1 张图片的字节总是小于这 3 张图片的字节总和。</li></ul> <p><strong>缺点：</strong></p> <ul><li>在图片合并时，要把多张图片有序的、合理的合并成一张图片，还要留好足够的空间，防止板块内出现不必要的背景。在宽屏及高分辨率下的自适应页面，如果背景不够宽，很容易出现背景断裂；</li> <li>CSS Sprites 在开发的时候相对来说有点麻烦，需要借助 photoshop 或其他工具来对每个背景单元测量其准确的位置。</li> <li>维护方面：CSS Sprites 在维护的时候比较麻烦，页面背景有少许改动时，就要改这张合并的图片，无需改的地方尽量不要动，这样避免改动更多的 CSS，如果在原来的地方放不下，又只能（最好）往下加图片，这样图片的字节就增加了，还要改动 CSS。</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/css/" class="prev router-link-active">
+        行内元素和块级元素的区别
+      </a></span> <span class="next"><a href="/css/对line-height 的理解及其赋值方式.html">
+        对line-height 的理解及其赋值方式
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.a029a270.js" defer></script><script src="/assets/js/2.27a37e06.js" defer></script><script src="/assets/js/14.4980250b.js" defer></script><script src="/assets/js/9.b566f953.js" defer></script>
+    <script src="/assets/js/app.a029a270.js" defer></script><script src="/assets/js/2.27a37e06.js" defer></script><script src="/assets/js/15.22361b05.js" defer></script><script src="/assets/js/9.b566f953.js" defer></script>
   </body>
 </html>

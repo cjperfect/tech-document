@@ -8,10 +8,6 @@ module.exports = [
     link: "/archive/",
   },
   {
-    text: "HTML",
-    link: "/html/",
-  },
-  {
     text: "CSS",
     link: "/css/",
   },
