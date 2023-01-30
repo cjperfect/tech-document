@@ -32,7 +32,9 @@
     <div class="articles">
       <h3>文章列表</h3>
       <div class="article" v-for="(item, index) in data.pages" :key="index">
-        <a :href="item.regularPath">{{ item.title }}</a>
+        <a :href="$site.base.slice(0, -1) + item.regularPath"
+          >{{ item.title }}
+        </a>
 
         <Badge
           v-for="(cate, i) in item.frontmatter.categories || []"
@@ -90,6 +92,7 @@ const selectItem = (type = "tagsMap", item) => {
 
 onMounted(() => {
   const vue = getCurrentInstance().proxy;
+  console.log(vue);
   const pages = vue.$site.pages;
   const tagsMap = getTagsOrCategoryMap("tags", pages);
   const categoriesMap = getTagsOrCategoryMap("categories", pages);
