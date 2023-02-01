@@ -35,4 +35,8 @@ module.exports = [
     text: "CSDN",
     link: "https://blog.csdn.net/qq_39583550",
   },
+  {
+    text: "个人工具",
+    link: "https://cjperfect.gitee.io/mock/",
+  },
 ];
