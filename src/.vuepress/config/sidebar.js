@@ -3,7 +3,7 @@ console.log;
 module.exports = {
   "/css/": [
     {
-      title: "技术文档",
+      title: "HTML/CSS",
       collapsable: true,
       children: readFile("css"),
     },

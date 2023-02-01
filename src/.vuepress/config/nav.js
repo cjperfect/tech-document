@@ -8,7 +8,7 @@ module.exports = [
     link: "/archive/",
   },
   {
-    text: "CSS",
+    text: "HTML/CSS",
     link: "/css/",
   },
   {
