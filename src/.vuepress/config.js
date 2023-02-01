@@ -17,6 +17,7 @@ module.exports = {
   ],
 
   themeConfig: {
+    sidebarDepth: 2,
     author: "陈江",
     // repo: "https://github.com/cjperfect/tech-document.git",
     nav,

@@ -9,11 +9,11 @@ tags:
 
 <custom-header/>
 
-### Ajax
+## Ajax
 
 Ajax 即“AsynchronousJavascriptAndXML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。它是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
 
-### Fetch
+## Fetch
 
 Fetch 是 AJAX 的替代品，是在 ES6 出现的，使用了 ES6 中的 promise 对象。Fetch 是基于 promise 设计的。Fetch 的代码结构比起 ajax 简单多。fetch 不是 ajax 的进一步封装，而是原生 js，没有使用 XMLHttpRequest 对象。
 
@@ -34,7 +34,7 @@ fetch 的缺点：
 
 :::
 
-### Axios
+## Axios
 
 Axios 是一种基于 Promise 封装的 HTTP 客户端
 
