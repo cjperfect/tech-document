@@ -1,5 +1,4 @@
 const { readFile } = require("../utils");
-console.log;
 module.exports = {
   "/css/": [
     {

@@ -37,6 +37,6 @@ module.exports = [
   },
   {
     text: "个人工具",
-    link: "https://cjperfect.gitee.io/mock/",
+    link: "https://cjperfect.gitee.io/",
   },
 ];
