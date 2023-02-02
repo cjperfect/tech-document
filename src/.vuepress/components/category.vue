@@ -32,22 +32,30 @@
     <div class="articles">
       <h3>文章列表</h3>
       <div class="article" v-for="(item, index) in data.pages" :key="index">
-        <a :href="$site.base.slice(0, -1) + item.regularPath"
-          >{{ item.title }}
-        </a>
-
-        <Badge
-          v-for="(cate, i) in item.frontmatter.categories || []"
-          :key="i"
-          :text="cate"
-        />
-
-        <Badge
-          type="warning"
-          v-for="(cate, i) in item.frontmatter.tags || []"
-          :key="i"
-          :text="cate"
-        />
+        <div class="article-item">
+          <a :href="$site.base.slice(0, -1) + item.regularPath"
+            >{{ item.title }}
+          </a>
+          <div class="info">
+            <span class="user">
+              <img src="./images/user.svg" alt="" />
+              {{ item.frontmatter.author || $themeConfig.author }}
+            </span>
+            <span class="time">
+              <img src="./images/time.svg" alt="" />{{
+                item.frontmatter.date || "2023年1月15日09:22:55"
+              }}</span
+            >
+            <span class="category">
+              <img src="./images/cate.svg" alt="" />
+              {{ (item.frontmatter.categories || []).join("&nbsp;&nbsp;") }}
+            </span>
+            <span class="tag">
+              <img src="./images/tag.svg" alt="" />
+              {{ (item.frontmatter.tags || []).join("&nbsp;&nbsp;") }}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -92,7 +100,6 @@ const selectItem = (type = "tagsMap", item) => {
 
 onMounted(() => {
   const vue = getCurrentInstance().proxy;
-  console.log(vue);
   const pages = vue.$site.pages;
   const tagsMap = getTagsOrCategoryMap("tags", pages);
   const categoriesMap = getTagsOrCategoryMap("categories", pages);
@@ -121,6 +128,40 @@ onMounted(() => {
 </script>
 
 <style lang="stylus" scoped>
+.article-item
+  background: #F9FAFB;
+  padding: 1.2rem;
+  transition: all 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+
+.article-item:hover
+  box-shadow: 0 6px 16px -8px #00000014, 0 9px 28px #0000000d, 0 12px 48px 16px #00000008;
+
+
+.info
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+.info img
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+
+.info > span
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+.info > span.category
+  color: #27ae60;
+
+.info > span.tag
+  color: #e67e22;
+
+
 a.tag, a.category
   display: inline-block;
   padding: 4px 6px;
@@ -128,18 +169,20 @@ a.tag, a.category
   margin-bottom: 10px;
 
 a.category
-  color: #42b983;
+  color: #27ae60;
 
 a.tag
-  color: #e7c000;
+  color: #e67e22;
 
 a.category.active
-  background-color: #42b983;
+  background-color: #27ae60;
   color: white;
+  border-radius: 3px;
 
 a.tag.active
-  background-color: #e7c000;
+  background-color: #e67e22;
   color: white;
+  border-radius: 3px;
 
 .article
   padding-bottom: 20px;

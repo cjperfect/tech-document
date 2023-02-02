@@ -5,7 +5,7 @@ const sidebar = require("./config/sidebar");
 module.exports = {
   base: "/tech-document/",
   dest: "./docs", // 设置build输出目录
-  title: "知识积累",
+  title: "技术文档",
   description: description,
   head: [
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
