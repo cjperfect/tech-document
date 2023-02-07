@@ -44,14 +44,14 @@ module.exports = {
   ],
   "/algorithm/": [
     {
-      title: "通用算法",
+      title: "算法",
       collapsable: true,
       children: readFile("algorithm"),
     },
-    {
-      title: "字符串算法",
-      collapsable: true,
-      children: readFile("algorithm/string", "/algorithm/string/"), // md文件目录和标题名称,
-    },
+    // {
+    //   title: "字符串算法",
+    //   collapsable: true,
+    //   children: readFile("algorithm/string", "/algorithm/string/"), // md文件目录和标题名称,
+    // },
   ],
 };

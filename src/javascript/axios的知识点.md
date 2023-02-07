@@ -7,6 +7,8 @@ tags:
   - 原生JS
 ---
 
+<custom-header/>
+
 ## axios 为什么能在浏览器中环境运行又能在 node 中环境运行？
 
 源码中 defaults.js 文件里有 getDefaultAdapter 这个方法，用来判断环境。如果是浏览器就实例 new XMLHttpRequest()来发送请求响应服务，node 环境就引用 http 和 https 库处理和响应 http 服务。

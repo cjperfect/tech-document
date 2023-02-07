@@ -5364,11 +5364,6 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
-lodash.throttle@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
-  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
-
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
@@ -8298,13 +8293,6 @@ vuepress-plugin-container@^2.0.2:
   dependencies:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
-
-vuepress-plugin-right-anchor@^0.5.5:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-right-anchor/-/vuepress-plugin-right-anchor-0.5.5.tgz#f5b8b12e8c911e51a3203d6e40f5d3b0d3213d10"
-  integrity sha512-C/zKeCw8Zzcd62DSGyiOwG6gOE9//VY5lPFPXxh1N/kJ2ICoCLNKBTFk2L9oDRgpWVc1TXk4HDqT+wxqz7MgmQ==
-  dependencies:
-    lodash.throttle "^4.1.1"
 
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"

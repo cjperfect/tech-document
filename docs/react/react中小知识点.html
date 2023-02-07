@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React中小知识点 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.1e486d2c.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.5eecd9c4.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.1289d340.js" as="script"><link rel="preload" href="/tech-document/assets/js/26.eba903f2.js" as="script"><link rel="preload" href="/tech-document/assets/js/9.6b389d19.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/10.e6924eac.js"><link rel="prefetch" href="/tech-document/assets/js/11.49ea546b.js"><link rel="prefetch" href="/tech-document/assets/js/12.1c62084f.js"><link rel="prefetch" href="/tech-document/assets/js/13.7480aa5e.js"><link rel="prefetch" href="/tech-document/assets/js/14.8855c121.js"><link rel="prefetch" href="/tech-document/assets/js/15.5fd16105.js"><link rel="prefetch" href="/tech-document/assets/js/16.87ae7ff0.js"><link rel="prefetch" href="/tech-document/assets/js/17.545c6194.js"><link rel="prefetch" href="/tech-document/assets/js/18.b46cf302.js"><link rel="prefetch" href="/tech-document/assets/js/19.61c368f9.js"><link rel="prefetch" href="/tech-document/assets/js/20.34b85b60.js"><link rel="prefetch" href="/tech-document/assets/js/21.c52245da.js"><link rel="prefetch" href="/tech-document/assets/js/22.c972877a.js"><link rel="prefetch" href="/tech-document/assets/js/23.7253e4fb.js"><link rel="prefetch" href="/tech-document/assets/js/24.04889d77.js"><link rel="prefetch" href="/tech-document/assets/js/25.1a135dfc.js"><link rel="prefetch" href="/tech-document/assets/js/27.f1b135e4.js"><link rel="prefetch" href="/tech-document/assets/js/28.7c66774b.js"><link rel="prefetch" href="/tech-document/assets/js/3.5e47ca5d.js"><link rel="prefetch" href="/tech-document/assets/js/4.44825672.js"><link rel="prefetch" href="/tech-document/assets/js/5.90b88bce.js"><link rel="prefetch" href="/tech-document/assets/js/6.375e873e.js"><link rel="prefetch" href="/tech-document/assets/js/7.121ee5f0.js"><link rel="prefetch" href="/tech-document/assets/js/8.2e3aad27.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.1e486d2c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Javascript" class="dropdown-title"><span class="title">Javascript</span> <span class="arrow down"></span></button> <button type="button" aria-label="Javascript" class="mobile-dropdown-title"><span class="title">Javascript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech-document/javascript/" class="nav-link">
+  原生JS
+</a></li><li class="dropdown-item"><!----> <a href="/tech-document/react/" class="nav-link router-link-active">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Javascript" class="dropdown-title"><span class="title">Javascript</span> <span class="arrow down"></span></button> <button type="button" aria-label="Javascript" class="mobile-dropdown-title"><span class="title">Javascript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech-document/javascript/" class="nav-link">
+  原生JS
+</a></li><li class="dropdown-item"><!----> <a href="/tech-document/react/" class="nav-link router-link-active">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>React</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/react/" aria-current="page" class="sidebar-link">什么渲染劫持</a></li><li><a href="/tech-document/react/react中小知识点.html" class="active sidebar-link">React中小知识点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech-document/react/react中小知识点.html#componentwillupdate-可以直接修改-state-的值吗" class="sidebar-link">componentWillUpdate 可以直接修改 state 的值吗？</a></li><li class="sidebar-sub-header"><a href="/tech-document/react/react中小知识点.html#在-react-中你有经常使用常量吗" class="sidebar-link">在 React 中你有经常使用常量吗？</a></li><li class="sidebar-sub-header"><a href="/tech-document/react/react中小知识点.html#为什么说-react-中的-props-是只读的" class="sidebar-link">为什么说 React 中的 props 是只读的？</a></li><li class="sidebar-sub-header"><a href="/tech-document/react/react中小知识点.html#super-和-super-props-有什么区别" class="sidebar-link">super()和 super(props)有什么区别？</a></li><li class="sidebar-sub-header"><a href="/tech-document/react/react中小知识点.html#你有使用过-loadable-组件吗-它帮我们解决了什么问题" class="sidebar-link">你有使用过 loadable 组件吗？它帮我们解决了什么问题？</a></li><li class="sidebar-sub-header"><a href="/tech-document/react/react中小知识点.html#你有使用过-suspense-组件吗-它帮我们解决了什么问题" class="sidebar-link">你有使用过 suspense 组件吗？它帮我们解决了什么问题？</a></li><li class="sidebar-sub-header"><a href="/tech-document/react/react中小知识点.html#怎样动态导入组件" class="sidebar-link">怎样动态导入组件？</a></li><li class="sidebar-sub-header"><a href="/tech-document/react/react中小知识点.html#使用-hooks-要遵守哪些原则" class="sidebar-link">使用 Hooks 要遵守哪些原则？</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <h2 id="componentwillupdate-可以直接修改-state-的值吗"><a href="#componentwillupdate-可以直接修改-state-的值吗" class="header-anchor">#</a> componentWillUpdate 可以直接修改 state 的值吗？</h2> <p>react 类组件在每次需要重新渲染时候都会调用 <code>componentWillUpdate()</code></p> <p>在这个函数中我们之所以不调用 this.setState()是因为该方法会触发另一个 componentWillUpdate(),如果我们 componentWillUpdate()中触发状态更改,我们将以无限循环结束.</p> <h2 id="在-react-中你有经常使用常量吗"><a href="#在-react-中你有经常使用常量吗" class="header-anchor">#</a> 在 React 中你有经常使用常量吗？</h2> <p>在写 react 应用的时候，在结合 redux 处理 react 应用层中的数据层的时候, 会单独写一个 actionType 文件，这个文件中定义的都是常量，这样写的好处是，单纯的引入字符串内容，容易出错且很难排查，中间做这个文件做一个过渡，就是这种引用常量的方式</p> <h2 id="为什么说-react-中的-props-是只读的"><a href="#为什么说-react-中的-props-是只读的" class="header-anchor">#</a> 为什么说 React 中的 props 是只读的？</h2> <p>react 官方文档中说道，组件无论是使用函数声明还是通过 class 声明，都绝不能修改自身的 props，props 作为组件对外通信的一个接口，为了保证组件像纯函数一样没有响应的副作用，所有的组件都必须像纯函数一样保护它们的 props 不被修改</p> <h2 id="super-和-super-props-有什么区别"><a href="#super-和-super-props-有什么区别" class="header-anchor">#</a> super()和 super(props)有什么区别？</h2> <p>react 中的 class 是基于 es6 的规范实现的, 继承是使用 extends 关键字实现继承的，子类必须在 constructor()中调用 super() 方法否则新建实例
+就会报错。
+报错的原因是：子类是没有自己的 this 对象的，它只能继承父类的 this 对象，然后对其进行加工，而 super()就是将父类中的 this 对象继承给子类的，没有 super() 子类就得不到 this 对象。</p> <p>如果你使用了 constructor 就必须写 super() 这个是用来初始化 this 的，可以绑定事件到 this 上
+如果你想要在 constructor 中使用 this.props,就必须给 super 添加参数 super(props)
+注意，无论有没有 constructor，在 render 中的 this.props 都是可以使用的，这是 react 自动附带的
+如果没有用到 constructor 是可以不写的，react 会默认添加一个空的 constroctor.</p> <h2 id="你有使用过-loadable-组件吗-它帮我们解决了什么问题"><a href="#你有使用过-loadable-组件吗-它帮我们解决了什么问题" class="header-anchor">#</a> 你有使用过 loadable 组件吗？它帮我们解决了什么问题？</h2> <p>react-loadable，用于代码分割，解决打包体积过大的问题；
+react-loadable 的作用
+由于路由只是组件，我们仍然可以在路由级别轻松地进行代码拆分。
+在你的应用程序中引入新的代码分割点应该是如此简单，以至于你不会再三考虑。这应该是一个改变几行代码和其他一切都应该自动化的问题。
+Loadable 是一个高阶组件(一个创建组件的函数)，它允许您在将任何模块呈现到应用程序之前动态加载它。</p> <h2 id="你有使用过-suspense-组件吗-它帮我们解决了什么问题"><a href="#你有使用过-suspense-组件吗-它帮我们解决了什么问题" class="header-anchor">#</a> 你有使用过 suspense 组件吗？它帮我们解决了什么问题？</h2> <p>动态加载(异步组件)加载时候会有延迟,在这延迟期间可以将一些内容展示给用户,比如 loading</p> <h2 id="怎样动态导入组件"><a href="#怎样动态导入组件" class="header-anchor">#</a> 怎样动态导入组件？</h2> <ul><li>自己使用 import 和 async/await 实现的异步组件</li> <li>React.lazy</li> <li>开源库 react-loadable 库/react-lazyload 库</li> <li>babel 动态导入（Dynamic Import）</li></ul> <h2 id="使用-hooks-要遵守哪些原则"><a href="#使用-hooks-要遵守哪些原则" class="header-anchor">#</a> 使用 Hooks 要遵守哪些原则？</h2> <ul><li>只在最顶层使用 Hook
+不要在循环，条件或嵌套函数中调用 Hook， 确保总是在你的 React 函数的最顶层调用他们。</li> <li>只在 React 函数中调用 Hook</li> <li>不要在普通的 JavaScript 函数中调用 Hook。你可以：
+<ul><li>在 React 的函数组件中调用 Hook</li> <li>在自定义 Hook 中调用其他 Hook</li></ul></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/react/" class="prev router-link-active">
+        什么渲染劫持
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/tech-document/assets/js/app.5eecd9c4.js" defer></script><script src="/tech-document/assets/js/2.1289d340.js" defer></script><script src="/tech-document/assets/js/26.eba903f2.js" defer></script><script src="/tech-document/assets/js/9.6b389d19.js" defer></script>
+  </body>
+</html>
