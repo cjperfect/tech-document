@@ -13,11 +13,20 @@ module.exports = [
   },
   {
     text: "Javascript",
-    items: [
-      { text: "原生JS", link: "/javascript/" },
-      { text: "React", link: "/react/" },
-      { text: "Vue", link: "/vue/" },
-    ],
+    link: "/javascript/",
+  },
+
+  {
+    text: "React",
+    link: "/react/",
+  },
+  {
+    text: "Vue",
+    link: "/vue/",
+  },
+  {
+    text: "Typescript",
+    link: "/typescript/",
   },
   {
     text: "Webpack",

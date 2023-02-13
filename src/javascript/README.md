@@ -4,14 +4,14 @@ date: 2023年1月29日09:41:02
 categories:
   - 前端
 tags:
-  - 原生JS
+  - JavaScript
 ---
 
 <custom-header />
 
 ## Map 结构
 
-[MDN介绍](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)
+[MDN 介绍](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
 Map` 类似于对象，但是键名不限于 String 和 Symbol 两种类型，它的 key 可以是任意类型，结构优于传统的对象。
 
@@ -56,25 +56,19 @@ map.set(key, true);
 3. 键值对很多，有需要计算数量时，**用 Map**
 4. 需要频繁增删键值对时，**用 Map**
 
+## 什么是 WeakMap
 
+[MDN 介绍](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 
-## 什么是WeakMap
+`WeakMap`是 ES6 中新增的一种集合类型，叫做“弱映射”。它和`Map`是兄弟关系，与`Map`的区别就在于这个**弱字**，API 还是`Map`的那套（只有`set` `get` `has` `delete`)
 
-[MDN介绍](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
-
- `WeakMap`是 ES6 中新增的一种集合类型，叫做“弱映射”。它和`Map`是兄弟关系，与`Map`的区别就在于这个**弱字**，API 还是`Map`的那套（只有`set` `get` `has` `delete`) 
-
-
-
-### WeakMap的特点
+### WeakMap 的特点
 
 只接受对象作为键名（`null` 除外），不接受其他类型的值作为键名；
 
-
-
 ### WeakMap 的键名引用的对象是弱引用
 
- 这是`WeakMap`结构的关键所在 
+这是`WeakMap`结构的关键所在
 
 #### 什么是强引用
 
@@ -84,18 +78,16 @@ const obj2 = { c: 3, d: 4 };
 
 const arr = [
   [obj1, "这是obj1对象"],
-  [obj2, "这是obj2对象"]
+  [obj2, "这是obj2对象"],
 ];
 ```
 
-obj1和obj2是两个对象，通过arr数组对这两个对象添加一些文字说明，这样就形成了arr对obj1和obj2的应用，这种应用就是`强引用`，当我们不需要这个对象时候，还需要手动的删除这个引用，解除arr对这两个对象的引用，否则垃圾回收机制不会释放这两个对象占用的内存。
+obj1 和 obj2 是两个对象，通过 arr 数组对这两个对象添加一些文字说明，这样就形成了 arr 对 obj1 和 obj2 的应用，这种应用就是`强引用`，当我们不需要这个对象时候，还需要手动的删除这个引用，解除 arr 对这两个对象的引用，否则垃圾回收机制不会释放这两个对象占用的内存。
 
 ```js
 arr[0] = null;
 arr[1] = null;
 ```
-
-
 
 #### 什么是弱引用
 
@@ -104,8 +96,6 @@ arr[1] = null;
 ```js
 const obj = new WeakMap();
 ```
-
-
 
 #### 图解强引用和弱引用
 
@@ -118,15 +108,9 @@ const map = new Map();
 map.set(obj1, "引用了obj1对象");
 ```
 
-
-
 ![1674959056101](./images/1674959056101.png)
 
-
-
-从上图可以看出，obj1这个对象被引用了两次，因此引用计数为2。
-
-
+从上图可以看出，obj1 这个对象被引用了两次，因此引用计数为 2。
 
 弱引用：
 
@@ -139,27 +123,21 @@ weakMap.set(obj1, "引用了obj1对象");
 
 ![1674959263825](./images/1674959263825.png)
 
-从上图可以看出，obj1被引用了1次，引用计数为1.
-
-
+从上图可以看出，obj1 被引用了 1 次，引用计数为 1.
 
 ::: tip 提示
 
 如果强引用数据被删除时候，我们需要手动的解除引用，而弱引用可以直接等待垃圾回收机制自动清除。
 
+当`obj1 = null`时会解除 obj1 对原数据的引用；
 
+weakMap 实例对象对 obj1 所引用的对象是`弱引用关系`，该数据的引用计数就是 0，因此会被垃圾回收机制清除；
 
-当`obj1 = null`时会解除obj1对原数据的引用；
-
-weakMap实例对象对obj1所引用的对象是`弱引用关系`，该数据的引用计数就是0，因此会被垃圾回收机制清除；
-
-map实例对象是对obj1所引用的对象是`强引用关系`，该数据的引用计数是1， 因此不会被垃圾回收机制清除。
+map 实例对象是对 obj1 所引用的对象是`强引用关系`，该数据的引用计数是 1， 因此不会被垃圾回收机制清除。
 
 :::
 
-
-
-### WeakMap的应用场景
+### WeakMap 的应用场景
 
 #### 1. DOM 节点元数据
 
@@ -167,39 +145,30 @@ map实例对象是对obj1所引用的对象是`强引用关系`，该数据的�
 
 ![image-20210725171056590](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/733e38dd1b114563a43e04e8f51a9068~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
 
-当上面代码执行后，登录按钮从DOM树中被删除了，但由于 Map 对节点对象是强引用关系，仍然保存着对按钮的引用，所以会引起内存泄漏
+当上面代码执行后，登录按钮从 DOM 树中被删除了，但由于 Map 对节点对象是强引用关系，仍然保存着对按钮的引用，所以会引起内存泄漏
 
 ![image-20210725171352098](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f50f0747e5743cdbecb63d83ea47aed~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
 
-因此可以采用`WeakMap`当节点删除后，引用计数为0，等待垃圾回收机制回收
-
-
+因此可以采用`WeakMap`当节点删除后，引用计数为 0，等待垃圾回收机制回收
 
 #### 2. 部署私有属性
 
- 利用弱映射，将内部属性设置为实例的弱引用对象，当实例删除时，私有属性也会随之消失，因此不会内存泄漏 
+利用弱映射，将内部属性设置为实例的弱引用对象，当实例删除时，私有属性也会随之消失，因此不会内存泄漏
 
 ![image-20210725172559971](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9843042808ba4d888d838f9a434e35ed~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
 
-
-
 #### 3. 数据缓存
 
- 当我们需要在不修改原有对象的情况下储存某些属性等，而又不想管理这些数据时，可以使用`WeakMap` 
+当我们需要在不修改原有对象的情况下储存某些属性等，而又不想管理这些数据时，可以使用`WeakMap`
 
 ![image-20210725173257029](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b77c6e9beef643bd840b59ae4626db5e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
 
+## Map 和 WeakMap 的区别
 
-
-## Map和WeakMap的区别
-
-1. `Map` 的键可以是任意类型，`WeakMap` 只接受对象作为键（null除外），不接受其他类型的值作为键
+1. `Map` 的键可以是任意类型，`WeakMap` 只接受对象作为键（null 除外），不接受其他类型的值作为键
 2. `Map` 的键实际上是跟内存地址绑定的，只要内存地址不一样，就视为两个键； `WeakMap` 的键是弱引用，键所指向的对象可以被垃圾回收，此时键是无效的
 3. `Map`可以被遍历， `WeakMap` 不能被遍历
 
-
-
-***
+---
 
 - 原文地址：https://juejin.cn/post/6993101968545677319
-

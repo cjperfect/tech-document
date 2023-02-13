@@ -4,7 +4,7 @@ date: 2023年2月1日13:18:07
 categories:
   - 前端
 tags:
-  - 原生JS
+  - JavaScript
 ---
 
 <custom-header/>

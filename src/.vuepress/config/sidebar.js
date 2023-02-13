@@ -28,6 +28,13 @@ module.exports = {
       children: readFile("vue"),
     },
   ],
+  "/typescript/": [
+    {
+      title: "Typescript",
+      collapsable: true,
+      children: readFile("typescript"),
+    },
+  ],
   "/webpack/": [
     {
       title: "Webpack",
