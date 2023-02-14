@@ -17,7 +17,7 @@ module.exports = {
   ],
 
   themeConfig: {
-    sidebarDepth: 2,
+    sidebarDepth: 0,
     author: "陈江",
     // repo: "https://github.com/cjperfect/tech-document.git",
     nav,
@@ -28,5 +28,18 @@ module.exports = {
     "@vuepress/medium-zoom",
     "@vuepress/active-header-links",
     "vuepress-plugin-smooth-scroll",
+    [
+      "vuepress-plugin-right-anchor",
+      {
+        showDepth: 2,
+        ignore: ["/", "/api/"],
+        expand: {
+          trigger: "click",
+          clickModeDefaultOpen: true,
+        },
+        customClass: "cj-right-anchor",
+        disableGlobalUI: false,
+      },
+    ],
   ],
 };
