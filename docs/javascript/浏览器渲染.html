@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浏览器渲染 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.1e486d2c.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.e679687a.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.704142f4.js" as="script"><link rel="preload" href="/tech-document/assets/js/27.b354ce08.js" as="script"><link rel="preload" href="/tech-document/assets/js/9.6d66df60.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/10.26317d26.js"><link rel="prefetch" href="/tech-document/assets/js/11.21dc4e90.js"><link rel="prefetch" href="/tech-document/assets/js/12.54ef7d2f.js"><link rel="prefetch" href="/tech-document/assets/js/13.98189189.js"><link rel="prefetch" href="/tech-document/assets/js/14.f158ef3d.js"><link rel="prefetch" href="/tech-document/assets/js/15.68cd459e.js"><link rel="prefetch" href="/tech-document/assets/js/16.a3811a9e.js"><link rel="prefetch" href="/tech-document/assets/js/17.54b1b433.js"><link rel="prefetch" href="/tech-document/assets/js/18.7aaf1d53.js"><link rel="prefetch" href="/tech-document/assets/js/19.a355d500.js"><link rel="prefetch" href="/tech-document/assets/js/20.f76bc2da.js"><link rel="prefetch" href="/tech-document/assets/js/21.732fa2a9.js"><link rel="prefetch" href="/tech-document/assets/js/22.33c42ab0.js"><link rel="prefetch" href="/tech-document/assets/js/23.400c7f66.js"><link rel="prefetch" href="/tech-document/assets/js/24.d17a309b.js"><link rel="prefetch" href="/tech-document/assets/js/25.17c51333.js"><link rel="prefetch" href="/tech-document/assets/js/26.06224e87.js"><link rel="prefetch" href="/tech-document/assets/js/28.3333b266.js"><link rel="prefetch" href="/tech-document/assets/js/29.90687697.js"><link rel="prefetch" href="/tech-document/assets/js/3.f9bd8bf0.js"><link rel="prefetch" href="/tech-document/assets/js/30.d0387540.js"><link rel="prefetch" href="/tech-document/assets/js/31.bfbe2a7f.js"><link rel="prefetch" href="/tech-document/assets/js/32.e2b886eb.js"><link rel="prefetch" href="/tech-document/assets/js/33.a65e227b.js"><link rel="prefetch" href="/tech-document/assets/js/4.9ce2a3b0.js"><link rel="prefetch" href="/tech-document/assets/js/5.6a9778e3.js"><link rel="prefetch" href="/tech-document/assets/js/6.63f575ac.js"><link rel="prefetch" href="/tech-document/assets/js/7.33ba9ba7.js"><link rel="prefetch" href="/tech-document/assets/js/8.59451fb9.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.1e486d2c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/javascript/" aria-current="page" class="sidebar-link">Map 和 WeakMap 区别以及使用场景</a></li><li><a href="/tech-document/javascript/Ajax、axios、fetch的区别.html" class="sidebar-link">Ajax、axios、fetch的区别</a></li><li><a href="/tech-document/javascript/axios的知识点.html" class="sidebar-link">axios的知识点</a></li><li><a href="/tech-document/javascript/JS小知识点.html" class="sidebar-link">JS小知识点</a></li><li><a href="/tech-document/javascript/Polyfill是什么.html" class="sidebar-link">Polyfill是什么</a></li><li><a href="/tech-document/javascript/requestIdleCallback和requestAnimationFrame详解 .html" class="sidebar-link">requestIdleCallback和requestAnimationFrame详解</a></li><li><a href="/tech-document/javascript/setInterval 不准确的问题.html" class="sidebar-link">setInterval 不准确的问题</a></li><li><a href="/tech-document/javascript/引起内存泄漏的操作有哪些.html" class="sidebar-link">引起内存泄漏的操作有哪些</a></li><li><a href="/tech-document/javascript/浏览器渲染.html" class="active sidebar-link">浏览器渲染</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <h3 id="浏览器渲染步骤"><a href="#浏览器渲染步骤" class="header-anchor">#</a> 浏览器渲染步骤</h3> <ol><li><p><strong>DOM</strong>：将 HTML 解析成 DOM 树，开发者可以在控制台输入<code>document</code>感知它的存在。</p></li> <li><p><strong>Style</strong>：解析 CSS，开发者可以在控制输入<code>document.styleSheets</code>感知它的存在。</p></li> <li><p><strong>Layout</strong>：构建布局树，布局树会移除 DOM 树不可见的部分，并计算可见部分的<code>几何位置</code></p></li> <li><p><strong>Layer</strong>：将页面划分多个图层，一些层叠上下文 CSS 属性（比如 z-index、opacity、
+position）、“由于显示不全被裁剪的内容”等会使 DOM 元素形成独立的图层。</p></li> <li><p><strong>Paint</strong>：为每个图层生成包含“绘制信息”的绘制列表，将绘制列表提交给渲染进程的合成线程用于绘制。</p></li></ol> <hr> <p>执行上述任务的流程被称为“渲染流水线”，每次执行流水线时，上述所有任务并不一定全部执行，比如：</p> <ul><li><p>当通过 JS 或者 CSS 修改了 DOM 元素的几何位置（比如长度、宽度）时，会触发完成的渲染流水线，这种情况成为<code>重排</code>。</p></li> <li><p>当修改的属性不涉及几何属性（比如字体颜色）时，会省略流流水线中的<code>Layout、Layer</code>过程，这种情况成为<code>重绘</code>。</p></li> <li><p>当修改“不涉及重排、重绘的属性”（比如 transform 属性）时，会省略流水线中的<code>Layout、Layer、Paint</code>过程，仅执行<code>合成线程</code>的绘制工作，这种情况称为<code>合成</code></p></li></ul> <p>按照“性能高低“对这些流程进行排序：<code>重排 &lt; 重绘 &lt; 合成</code>。这也是 CSS 动画性能优于 JS 动画性能的原因，前者可能仅涉及<code>合成</code>，后者会涉及到<code>重排、重绘</code>。</p> <h3 id="重绘和回流-重排-详细描述"><a href="#重绘和回流-重排-详细描述" class="header-anchor">#</a> 重绘和回流（重排）详细描述</h3> <div class="custom-block tip"><p class="custom-block-title">重绘（repaint）</p> <p>当 render tree 中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如 background-color。则就叫称为重绘。</p> <p>当你给一个元素更换颜色，这样的行为是不会影响页面布局的，DOM 树不会变化，但颜色变了，渲染树得重新渲染页面，这就是重绘。</p></div> <div class="custom-block tip"><p class="custom-block-title">回流（重排）（reflow）</p> <p>当 render tree 中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。</p> <p>增删 DOM 节点，修改一个元素的宽高，页面布局发生变化，DOM 树结构发生变化，那么肯定要重新构建 DOM 树，而 DOM 树与渲染树是紧密相连的，DOM 树构建完，渲染树也会随之对页面进行再次渲染，这个过程就叫回流。</p></div> <p><strong><font color="red">如何减少回流（重排）</font></strong></p> <ol><li><p>DOM 的增删行为
+比如你要删除某个节点，给某个父元素增加子元素，这类操作都会引起回流。如果要加多个子元素，最好使用 documentfragment。</p></li> <li><p>几何属性的变化
+比如元素宽高变了，border 变了，字体大小变了，这种直接会引起页面布局变化的操作也会引起回流。如果你要改变多个属性，最好将这些属性定义在一个 class 中，直接修改 class 名，这样只用引起一次回流。</p></li> <li><p>元素位置的变化
+修改一个元素的左右 margin，padding 之类的操作，所以在做元素位移的动画，不要更改 margin 之类的属性，使用定位脱离文档流后改变位置会更好。</p></li> <li><p>获取元素的偏移量属性
+例如获取一个元素的 scrollTop、scrollLeft、scrollWidth、offsetTop、offsetLeft、offsetWidth、offsetHeight 之类的属性，浏览器为了保证值的正确也会回流取得最新的值，所以如果你要多次操作，最好取完做个缓存。</p></li> <li><p>页面初次渲染
+这样的回流无法避免</p></li> <li><p>浏览器窗口尺寸改变
+resize 事件发生也会引起回流。</p></li></ol> <hr> <p><a href="https://blog.csdn.net/qq_39583550/article/details/128381589" target="_blank" rel="noopener noreferrer">重绘和回流的应用场景<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/javascript/引起内存泄漏的操作有哪些.html" class="prev">
+        引起内存泄漏的操作有哪些
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/tech-document/assets/js/app.e679687a.js" defer></script><script src="/tech-document/assets/js/2.704142f4.js" defer></script><script src="/tech-document/assets/js/27.b354ce08.js" defer></script><script src="/tech-document/assets/js/9.6d66df60.js" defer></script>
+  </body>
+</html>

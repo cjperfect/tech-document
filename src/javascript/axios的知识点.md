@@ -6,6 +6,7 @@ categories:
 tags:
   - JavaScript
   - ajax
+  - axios
 ---
 
 <custom-header/>
@@ -43,16 +44,12 @@ var chain = [dispatchRequest, undefined];
 var promise = Promise.resolve(config);
 
 // 遍历用户设置的请求拦截器 放到数组的 chain 前面
-this.interceptors.request.forEach(function unshiftRequestInterceptors(
-  interceptor
-) {
+this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
   chain.unshift(interceptor.fulfilled, interceptor.rejected);
 });
 
 // 遍历用户设置的响应拦截器 放到数组的 chain 后面
-this.interceptors.response.forEach(function pushResponseInterceptors(
-  interceptor
-) {
+this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
   chain.push(interceptor.fulfilled, interceptor.rejected);
 });
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TS的.d.ts作用 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.1e486d2c.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.e679687a.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.704142f4.js" as="script"><link rel="preload" href="/tech-document/assets/js/11.21dc4e90.js" as="script"><link rel="preload" href="/tech-document/assets/js/9.6d66df60.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/10.26317d26.js"><link rel="prefetch" href="/tech-document/assets/js/12.54ef7d2f.js"><link rel="prefetch" href="/tech-document/assets/js/13.98189189.js"><link rel="prefetch" href="/tech-document/assets/js/14.f158ef3d.js"><link rel="prefetch" href="/tech-document/assets/js/15.68cd459e.js"><link rel="prefetch" href="/tech-document/assets/js/16.a3811a9e.js"><link rel="prefetch" href="/tech-document/assets/js/17.54b1b433.js"><link rel="prefetch" href="/tech-document/assets/js/18.7aaf1d53.js"><link rel="prefetch" href="/tech-document/assets/js/19.a355d500.js"><link rel="prefetch" href="/tech-document/assets/js/20.f76bc2da.js"><link rel="prefetch" href="/tech-document/assets/js/21.732fa2a9.js"><link rel="prefetch" href="/tech-document/assets/js/22.33c42ab0.js"><link rel="prefetch" href="/tech-document/assets/js/23.400c7f66.js"><link rel="prefetch" href="/tech-document/assets/js/24.d17a309b.js"><link rel="prefetch" href="/tech-document/assets/js/25.17c51333.js"><link rel="prefetch" href="/tech-document/assets/js/26.06224e87.js"><link rel="prefetch" href="/tech-document/assets/js/27.b354ce08.js"><link rel="prefetch" href="/tech-document/assets/js/28.3333b266.js"><link rel="prefetch" href="/tech-document/assets/js/29.90687697.js"><link rel="prefetch" href="/tech-document/assets/js/3.f9bd8bf0.js"><link rel="prefetch" href="/tech-document/assets/js/30.d0387540.js"><link rel="prefetch" href="/tech-document/assets/js/31.bfbe2a7f.js"><link rel="prefetch" href="/tech-document/assets/js/32.e2b886eb.js"><link rel="prefetch" href="/tech-document/assets/js/33.a65e227b.js"><link rel="prefetch" href="/tech-document/assets/js/4.9ce2a3b0.js"><link rel="prefetch" href="/tech-document/assets/js/5.6a9778e3.js"><link rel="prefetch" href="/tech-document/assets/js/6.63f575ac.js"><link rel="prefetch" href="/tech-document/assets/js/7.33ba9ba7.js"><link rel="prefetch" href="/tech-document/assets/js/8.59451fb9.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.1e486d2c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link router-link-active">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link router-link-active">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Typescript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/typescript/" aria-current="page" class="sidebar-link">Typescript的内置 Utility Types</a></li><li><a href="/tech-document/typescript/ts的dts.html" class="active sidebar-link">TS的.d.ts作用</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <p>.d.ts 文件是 ts 用来声明变量，模块，type，interface 等等的，那在这种后缀的 ts 文件声明这些东西和在纯 ts 文件声明这些东西又什么区别呢？</p> <p>在.d.ts 声明变量或者模块等东西之后，在其他地方可以不用 import 导入这些东西就可以直接用，而且有语法提示。</p> <p><img src="/tech-document/assets/img/1676341941670.a3769820.png" alt="1676341941670"></p> <p>也不是创建了.d.ts 文件，里面声明的东西就能生效了，毕竟归根到底也是.ts 文件，需要预编译，所以需要在<code>tsconfig.json</code>文件里面的 include 数组里面添加这个文件</p> <p><img src="/tech-document/assets/img/1676342042698.db98ae2f.png" alt="1676342042698"></p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>1..d.ts 文件顶级声明 declare 最好不要跟 export 同级使用，不然在其他 ts 引用这个.d.ts 的内容的时候，就需要手动 import 导入了</p> <p>2.在.d.ts 文件里如果顶级声明不用 export 的话，declare 和直接写 type、interface 效果是一样的，在其他地方都可以直接引用</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// 这个需要import才能使用</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Person</span> <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> age<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 这个两个全局可以直接使用（前提是include里面包含了这个文件)</span>
+<span class="token keyword">type</span> <span class="token class-name">Person1</span> <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> age<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">declare</span> <span class="token keyword">type</span> <span class="token class-name">Person2</span> <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> age<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/typescript/" class="prev router-link-active">
+        Typescript的内置 Utility Types
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/tech-document/assets/js/app.e679687a.js" defer></script><script src="/tech-document/assets/js/2.704142f4.js" defer></script><script src="/tech-document/assets/js/11.21dc4e90.js" defer></script><script src="/tech-document/assets/js/9.6d66df60.js" defer></script>
+  </body>
+</html>

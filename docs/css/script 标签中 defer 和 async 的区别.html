@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>script 标签中 defer 和 async 的区别 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.1e486d2c.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.e679687a.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.704142f4.js" as="script"><link rel="preload" href="/tech-document/assets/js/17.54b1b433.js" as="script"><link rel="preload" href="/tech-document/assets/js/9.6d66df60.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/10.26317d26.js"><link rel="prefetch" href="/tech-document/assets/js/11.21dc4e90.js"><link rel="prefetch" href="/tech-document/assets/js/12.54ef7d2f.js"><link rel="prefetch" href="/tech-document/assets/js/13.98189189.js"><link rel="prefetch" href="/tech-document/assets/js/14.f158ef3d.js"><link rel="prefetch" href="/tech-document/assets/js/15.68cd459e.js"><link rel="prefetch" href="/tech-document/assets/js/16.a3811a9e.js"><link rel="prefetch" href="/tech-document/assets/js/18.7aaf1d53.js"><link rel="prefetch" href="/tech-document/assets/js/19.a355d500.js"><link rel="prefetch" href="/tech-document/assets/js/20.f76bc2da.js"><link rel="prefetch" href="/tech-document/assets/js/21.732fa2a9.js"><link rel="prefetch" href="/tech-document/assets/js/22.33c42ab0.js"><link rel="prefetch" href="/tech-document/assets/js/23.400c7f66.js"><link rel="prefetch" href="/tech-document/assets/js/24.d17a309b.js"><link rel="prefetch" href="/tech-document/assets/js/25.17c51333.js"><link rel="prefetch" href="/tech-document/assets/js/26.06224e87.js"><link rel="prefetch" href="/tech-document/assets/js/27.b354ce08.js"><link rel="prefetch" href="/tech-document/assets/js/28.3333b266.js"><link rel="prefetch" href="/tech-document/assets/js/29.90687697.js"><link rel="prefetch" href="/tech-document/assets/js/3.f9bd8bf0.js"><link rel="prefetch" href="/tech-document/assets/js/30.d0387540.js"><link rel="prefetch" href="/tech-document/assets/js/31.bfbe2a7f.js"><link rel="prefetch" href="/tech-document/assets/js/32.e2b886eb.js"><link rel="prefetch" href="/tech-document/assets/js/33.a65e227b.js"><link rel="prefetch" href="/tech-document/assets/js/4.9ce2a3b0.js"><link rel="prefetch" href="/tech-document/assets/js/5.6a9778e3.js"><link rel="prefetch" href="/tech-document/assets/js/6.63f575ac.js"><link rel="prefetch" href="/tech-document/assets/js/7.33ba9ba7.js"><link rel="prefetch" href="/tech-document/assets/js/8.59451fb9.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.1e486d2c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link router-link-active">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link router-link-active">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>HTML/CSS</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/css/" aria-current="page" class="sidebar-link">行内元素和块级元素的区别</a></li><li><a href="/tech-document/css/HTML的colgroup标签.html" class="sidebar-link">HTML的colgroup标签</a></li><li><a href="/tech-document/css/script 标签中 defer 和 async 的区别.html" class="active sidebar-link">script 标签中 defer 和 async 的区别</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech-document/css/script 标签中 defer 和 async 的区别.html#script" class="sidebar-link">script</a></li><li class="sidebar-sub-header"><a href="/tech-document/css/script 标签中 defer 和 async 的区别.html#defer" class="sidebar-link">defer</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech-document/css/script 标签中 defer 和 async 的区别.html#总结" class="sidebar-link">总结</a></li></ul></li><li class="sidebar-sub-header"><a href="/tech-document/css/script 标签中 defer 和 async 的区别.html#async" class="sidebar-link">async</a></li><li class="sidebar-sub-header"><a href="/tech-document/css/script 标签中 defer 和 async 的区别.html#两者区别" class="sidebar-link">两者区别</a></li></ul></li><li><a href="/tech-document/css/对 CSS Sprites图的理解.html" class="sidebar-link">CSS Sprites图的理解</a></li><li><a href="/tech-document/css/对line-height 的理解及其赋值方式.html" class="sidebar-link">对line-height 的理解及其赋值方式</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <h2 id="script"><a href="#script" class="header-anchor">#</a> script</h2> <p>当浏览器加载<code>html</code>中遇到<code>script</code>标签，它就无法继续构建<code>DOM</code>。它必须立即执行脚本。浏览器必须要等待脚本下载，执行下载的脚本，然后才能处理页面的其余部分。</p> <div class="custom-block danger"><p class="custom-block-title">存在的问题</p> <p>如果页面中存在一个庞大的脚本，它就会<code>阻塞</code>页面的加载。在下载和运行完成之前，用于无法看到页面的内容。</p> <p>解决办法：</p> <ul><li>把脚本放到最底部，但是也会存在一个问题（对于长的html文档，就有可能有明显的延迟）</li></ul></div> <h2 id="defer"><a href="#defer" class="header-anchor">#</a> defer</h2> <p><code>defer</code>属性会通知浏览器不需要等待脚本，浏览继续处理构建<code>DOM</code>，该脚本在后台加载，等待DOM构建完成了，再来运行脚本。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>xxxxx<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">执行时机</p> <p><code>defer</code>脚本总是在DOM准备好的时机执行，在<code>DOMContentLoaded</code>事件之前。</p></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'DOMContentLoaded'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'DOM全部加载完成了， defer脚本也执行完成了'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>defer.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> 
+// 假如defer.js的代码是console.log('我是带有defer的脚本')
+
+// 打印结果
+我是带有defer的脚本
+DOM全部加载完成了， defer脚本也执行完成了
+</code></pre></div><h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <ol><li>页面可以立刻显示</li> <li><code>DOMContentLoaded</code>事件要等待defer脚本执行完之后执行</li></ol> <div class="custom-block danger"><p class="custom-block-title">注意</p> <p>HTML5规范要求脚本按照它们出现的先后顺序执行，因此第一个延迟脚本会先于第二个延迟脚本执行，而这两个脚本会先于<code>DOMContentLoaded</code>事件执行。<strong>在现实当中</strong>，延迟脚本并不一定会按照顺序执行，也不一定会在<code>DOMContentLoad</code>时间触发前执行，因此最好只包含一个延迟脚本。</p></div> <h2 id="async"><a href="#async" class="header-anchor">#</a> async</h2> <ul><li><p>浏览器不会阻止async脚本</p></li> <li><p>其他脚本也不会等待async脚本，async脚本也不会等待其他脚本</p></li> <li><p><code>DOMContentLoaded</code>和async脚本不会互相等待</p> <ul><li><code>DOMContentLoaded</code>可能在async脚本执行之前触发（如果async脚本在页面解析完成后完成加载；或在async脚本执行之后触发（如果async脚本很快加载完成或在<code>HTTP</code>缓存中）</li></ul></li></ul> <div class="custom-block danger"><p class="custom-block-title">注意</p> <p>async和defer属性都仅适用于<code>外部脚本</code>，如果script标签没有src属性，尽管写了async、defer属性也会被忽略；</p></div> <h2 id="两者区别"><a href="#两者区别" class="header-anchor">#</a> 两者区别</h2> <p>defer 和 async有一个共同点：下载此类脚本都不会阻止页面呈现（异步加载），区别在于：</p> <ol><li>async 执行与文档顺序无关，先加载哪个就先执行哪个；defer会按照文档中的顺序执行</li> <li>async 脚本加载完成后立即执行，可以在DOM尚未完全下载完成就加载和执行；而defer脚本需要等到文档所有元素解析完成之后才执行</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/css/HTML的colgroup标签.html" class="prev">
+        HTML的colgroup标签
+      </a></span> <span class="next"><a href="/tech-document/css/对 CSS Sprites图的理解.html">
+        CSS Sprites图的理解
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/tech-document/assets/js/app.e679687a.js" defer></script><script src="/tech-document/assets/js/2.704142f4.js" defer></script><script src="/tech-document/assets/js/17.54b1b433.js" defer></script><script src="/tech-document/assets/js/9.6d66df60.js" defer></script>
+  </body>
+</html>
