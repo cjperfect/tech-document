@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS代码实现题 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.1693e5f9.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.751feba8.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.8dd3dab9.js" as="script"><link rel="preload" href="/tech-document/assets/js/23.69b441e5.js" as="script"><link rel="preload" href="/tech-document/assets/js/9.f66d10e3.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/10.6a8c8f67.js"><link rel="prefetch" href="/tech-document/assets/js/11.ae236813.js"><link rel="prefetch" href="/tech-document/assets/js/12.1bfb5511.js"><link rel="prefetch" href="/tech-document/assets/js/13.2d00642a.js"><link rel="prefetch" href="/tech-document/assets/js/14.cc889b4c.js"><link rel="prefetch" href="/tech-document/assets/js/15.2fd01d36.js"><link rel="prefetch" href="/tech-document/assets/js/16.b93ce8fb.js"><link rel="prefetch" href="/tech-document/assets/js/17.12764b7f.js"><link rel="prefetch" href="/tech-document/assets/js/18.dd0ec1d8.js"><link rel="prefetch" href="/tech-document/assets/js/19.9e2eaade.js"><link rel="prefetch" href="/tech-document/assets/js/20.3332631f.js"><link rel="prefetch" href="/tech-document/assets/js/21.72c8e3de.js"><link rel="prefetch" href="/tech-document/assets/js/22.57e08ef8.js"><link rel="prefetch" href="/tech-document/assets/js/24.922bbf75.js"><link rel="prefetch" href="/tech-document/assets/js/25.9922b2d9.js"><link rel="prefetch" href="/tech-document/assets/js/26.44d2b52d.js"><link rel="prefetch" href="/tech-document/assets/js/27.70cff768.js"><link rel="prefetch" href="/tech-document/assets/js/28.8a13b5c4.js"><link rel="prefetch" href="/tech-document/assets/js/29.1957fe81.js"><link rel="prefetch" href="/tech-document/assets/js/3.3338addb.js"><link rel="prefetch" href="/tech-document/assets/js/30.c54b19ac.js"><link rel="prefetch" href="/tech-document/assets/js/31.3d1ad8ba.js"><link rel="prefetch" href="/tech-document/assets/js/32.44435b19.js"><link rel="prefetch" href="/tech-document/assets/js/33.ff70ebba.js"><link rel="prefetch" href="/tech-document/assets/js/34.696c653c.js"><link rel="prefetch" href="/tech-document/assets/js/35.a2f6d56e.js"><link rel="prefetch" href="/tech-document/assets/js/36.37afc86a.js"><link rel="prefetch" href="/tech-document/assets/js/4.8a47313b.js"><link rel="prefetch" href="/tech-document/assets/js/5.a42d1d6e.js"><link rel="prefetch" href="/tech-document/assets/js/6.4f62e75e.js"><link rel="prefetch" href="/tech-document/assets/js/7.2c75813b.js"><link rel="prefetch" href="/tech-document/assets/js/8.f3783e2c.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.1693e5f9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/javascript/" aria-current="page" class="sidebar-link">浏览器渲染</a></li><li><a href="/tech-document/javascript/Ajax、axios、fetch的区别.html" class="sidebar-link">Ajax、axios、fetch的区别</a></li><li><a href="/tech-document/javascript/axios的知识点.html" class="sidebar-link">axios的知识点</a></li><li><a href="/tech-document/javascript/JS代码实现题.html" class="active sidebar-link">JS代码实现题</a></li><li><a href="/tech-document/javascript/JS小知识点.html" class="sidebar-link">JS小知识点</a></li><li><a href="/tech-document/javascript/Map和WeakMap区别以及使用场景.html" class="sidebar-link">Map 和 WeakMap 区别以及使用场景</a></li><li><a href="/tech-document/javascript/Polyfill是什么.html" class="sidebar-link">Polyfill是什么</a></li><li><a href="/tech-document/javascript/requestIdleCallback和requestAnimationFrame详解 .html" class="sidebar-link">requestIdleCallback和requestAnimationFrame详解</a></li><li><a href="/tech-document/javascript/setInterval 不准确的问题.html" class="sidebar-link">setInterval 不准确的问题</a></li><li><a href="/tech-document/javascript/图片懒加载.html" class="sidebar-link">原生JS实现图片懒加载</a></li><li><a href="/tech-document/javascript/引起内存泄漏的操作有哪些.html" class="sidebar-link">引起内存泄漏的操作有哪些</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <h2 id="写一个方法记录函数运行的时间"><a href="#写一个方法记录函数运行的时间" class="header-anchor">#</a> 写一个方法记录函数运行的时间</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token parameter">callBack</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">&quot;所用时间&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">callBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">&quot;所用时间&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">aa</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    num<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">method</span><span class="token punctuation">(</span>aa<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 所用时间: 0.10791015625 ms</span>
+</code></pre></div><h2 id="通过代码来解释下-new-和-instanceof-的内部机制"><a href="#通过代码来解释下-new-和-instanceof-的内部机制" class="header-anchor">#</a> 通过代码来解释下 new 和 instanceof 的内部机制</h2></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/javascript/axios的知识点.html" class="prev">
+        axios的知识点
+      </a></span> <span class="next"><a href="/tech-document/javascript/JS小知识点.html">
+        JS小知识点
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/tech-document/assets/js/app.751feba8.js" defer></script><script src="/tech-document/assets/js/2.8dd3dab9.js" defer></script><script src="/tech-document/assets/js/23.69b441e5.js" defer></script><script src="/tech-document/assets/js/9.f66d10e3.js" defer></script>
+  </body>
+</html>
