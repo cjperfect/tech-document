@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浅谈Fiber架构下React是如何更新的 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.f73dcc99.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.905cf5c4.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.e5db50c3.js" as="script"><link rel="preload" href="/tech-document/assets/js/15.f2f66e76.js" as="script"><link rel="preload" href="/tech-document/assets/js/10.a379b57f.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/11.6c1ba472.js"><link rel="prefetch" href="/tech-document/assets/js/12.b1a5838d.js"><link rel="prefetch" href="/tech-document/assets/js/13.6d60679c.js"><link rel="prefetch" href="/tech-document/assets/js/14.2b60c977.js"><link rel="prefetch" href="/tech-document/assets/js/16.ca323e6e.js"><link rel="prefetch" href="/tech-document/assets/js/17.ff678bec.js"><link rel="prefetch" href="/tech-document/assets/js/18.19d7d123.js"><link rel="prefetch" href="/tech-document/assets/js/19.d7d81a01.js"><link rel="prefetch" href="/tech-document/assets/js/20.4e7c7eea.js"><link rel="prefetch" href="/tech-document/assets/js/21.73218dd8.js"><link rel="prefetch" href="/tech-document/assets/js/22.14b71973.js"><link rel="prefetch" href="/tech-document/assets/js/23.eaad1bb4.js"><link rel="prefetch" href="/tech-document/assets/js/24.9af3f0fb.js"><link rel="prefetch" href="/tech-document/assets/js/25.091f881b.js"><link rel="prefetch" href="/tech-document/assets/js/26.027a8b96.js"><link rel="prefetch" href="/tech-document/assets/js/27.1de2815a.js"><link rel="prefetch" href="/tech-document/assets/js/28.94b4b373.js"><link rel="prefetch" href="/tech-document/assets/js/29.7624b0f7.js"><link rel="prefetch" href="/tech-document/assets/js/3.f81c6137.js"><link rel="prefetch" href="/tech-document/assets/js/30.95f754df.js"><link rel="prefetch" href="/tech-document/assets/js/31.e5a27506.js"><link rel="prefetch" href="/tech-document/assets/js/32.2efc3a22.js"><link rel="prefetch" href="/tech-document/assets/js/33.050be0d8.js"><link rel="prefetch" href="/tech-document/assets/js/34.3e9437c6.js"><link rel="prefetch" href="/tech-document/assets/js/35.d0db3fdb.js"><link rel="prefetch" href="/tech-document/assets/js/36.7c36a2b2.js"><link rel="prefetch" href="/tech-document/assets/js/37.9fe3962f.js"><link rel="prefetch" href="/tech-document/assets/js/38.801fc783.js"><link rel="prefetch" href="/tech-document/assets/js/39.7ab96b92.js"><link rel="prefetch" href="/tech-document/assets/js/4.421de8f7.js"><link rel="prefetch" href="/tech-document/assets/js/5.e1da5320.js"><link rel="prefetch" href="/tech-document/assets/js/6.f2105fa9.js"><link rel="prefetch" href="/tech-document/assets/js/7.d184bea1.js"><link rel="prefetch" href="/tech-document/assets/js/8.2c29bf57.js"><link rel="prefetch" href="/tech-document/assets/js/9.b981948b.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.f73dcc99.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>React</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/react/" aria-current="page" class="sidebar-link">React中小知识点</a></li><li><a href="/tech-document/react/0浅谈副作用.html" class="sidebar-link">浅谈React副作用</a></li><li><a href="/tech-document/react/1浅谈Fiber是什么，解决了什么问题.html" class="sidebar-link">浅谈Fiber是什么，解决了什么问题</a></li><li><a href="/tech-document/react/2浅谈Fiber架构下React是如何更新的.html" class="active sidebar-link">浅谈Fiber架构下React是如何更新的</a></li><li><a href="/tech-document/react/3浅谈ReactFiber是如何实现更新过程可控.html" class="sidebar-link">浅谈React Fiber是如何实现更新过程可控</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <p>简单概括就是两个阶段：</p> <ol><li><p>render(reconciliation)协调阶段，可中断/异步，主要是新 fiber 树的构建。</p></li> <li><p>commit 提交阶段，不可中断/同步，主要是更新最终效果。</p></li></ol> <h2 id="render-reconciliation-协调阶段"><a href="#render-reconciliation-协调阶段" class="header-anchor">#</a> render(reconciliation)协调阶段</h2> <p>这个阶段其实就是在内存中构建一颗新的 fiber 树（即 <code>workInProgress tree</code>），构建过程是根据现有的 fiber 树（即 <code>currentFiber tree</code>），从 root 开始深度优先遍历在回溯到 root 的过程，这个过程中每个 fiber 阶段会经历两个阶段：<code>beginWork 阶段</code>和 <code>completeWork 阶段</code>。</p> <ul><li><p>beginWork 阶段：
+组件的状态的计算、diff 的操作以及 render 函数的执行</p></li> <li><p>completeWork 阶段：
+effect 链表的收集，被跳过的优先级的收集。</p></li></ul> <p>在构建<code>workInProgress tree</code> 过程中会有一个 <code>workInProgress 的指针</code>记录当前构建到哪个 fiber 节点了，这也是 React 更新任务可恢复的重要原因之一。</p> <p><strong>render 协调阶段的简要过程：</strong></p> <p><img src="/tech-document/assets/img/wipgif.63d37786.gif" alt="wipgif"></p> <h2 id="commit-提交阶段"><a href="#commit-提交阶段" class="header-anchor">#</a> commit 提交阶段</h2> <p>在 render 阶段结束后，就会进入 commit 阶段，主要是依据<code>workInProgress tree</code>有变化的节点（即 render 阶段的 completeWork 过程中收集的 effect 链表），去更新 DOM 节点，将更新应用到界面中。除此之外还会异步调用<code>useEffect</code>和同步执行<code>useLayoutEffect</code>。</p> <div class="custom-block tip"><p class="custom-block-title">总结</p> <p>这两个阶段都是独立的 React 任务，最后会进入 Scheduler 被调度。</p> <p>render 阶段采用的调度优先级是根据本次更新的优先级来决定的，以便于高优先级进入的时候可以打断低优先级的任务工作；</p> <p>commit 阶段的调度优先级采用的是最高优先级，以保证 commit 阶段<code>同步执行</code>不会被打断。</p></div> <p>参考文章：</p> <ul><li><a href="https://juejin.cn/post/6917073781412331533" target="_blank" rel="noopener noreferrer">https://juejin.cn/post/6917073781412331533<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/react/1浅谈Fiber是什么，解决了什么问题.html" class="prev">
+        浅谈Fiber是什么，解决了什么问题
+      </a></span> <span class="next"><a href="/tech-document/react/3浅谈ReactFiber是如何实现更新过程可控.html">
+        浅谈React Fiber是如何实现更新过程可控
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/tech-document/assets/js/app.905cf5c4.js" defer></script><script src="/tech-document/assets/js/2.e5db50c3.js" defer></script><script src="/tech-document/assets/js/15.f2f66e76.js" defer></script><script src="/tech-document/assets/js/10.a379b57f.js" defer></script>
+  </body>
+</html>

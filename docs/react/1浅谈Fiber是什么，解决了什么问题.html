@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浅谈Fiber是什么，解决了什么问题 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.f73dcc99.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.905cf5c4.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.e5db50c3.js" as="script"><link rel="preload" href="/tech-document/assets/js/6.f2105fa9.js" as="script"><link rel="preload" href="/tech-document/assets/js/10.a379b57f.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/11.6c1ba472.js"><link rel="prefetch" href="/tech-document/assets/js/12.b1a5838d.js"><link rel="prefetch" href="/tech-document/assets/js/13.6d60679c.js"><link rel="prefetch" href="/tech-document/assets/js/14.2b60c977.js"><link rel="prefetch" href="/tech-document/assets/js/15.f2f66e76.js"><link rel="prefetch" href="/tech-document/assets/js/16.ca323e6e.js"><link rel="prefetch" href="/tech-document/assets/js/17.ff678bec.js"><link rel="prefetch" href="/tech-document/assets/js/18.19d7d123.js"><link rel="prefetch" href="/tech-document/assets/js/19.d7d81a01.js"><link rel="prefetch" href="/tech-document/assets/js/20.4e7c7eea.js"><link rel="prefetch" href="/tech-document/assets/js/21.73218dd8.js"><link rel="prefetch" href="/tech-document/assets/js/22.14b71973.js"><link rel="prefetch" href="/tech-document/assets/js/23.eaad1bb4.js"><link rel="prefetch" href="/tech-document/assets/js/24.9af3f0fb.js"><link rel="prefetch" href="/tech-document/assets/js/25.091f881b.js"><link rel="prefetch" href="/tech-document/assets/js/26.027a8b96.js"><link rel="prefetch" href="/tech-document/assets/js/27.1de2815a.js"><link rel="prefetch" href="/tech-document/assets/js/28.94b4b373.js"><link rel="prefetch" href="/tech-document/assets/js/29.7624b0f7.js"><link rel="prefetch" href="/tech-document/assets/js/3.f81c6137.js"><link rel="prefetch" href="/tech-document/assets/js/30.95f754df.js"><link rel="prefetch" href="/tech-document/assets/js/31.e5a27506.js"><link rel="prefetch" href="/tech-document/assets/js/32.2efc3a22.js"><link rel="prefetch" href="/tech-document/assets/js/33.050be0d8.js"><link rel="prefetch" href="/tech-document/assets/js/34.3e9437c6.js"><link rel="prefetch" href="/tech-document/assets/js/35.d0db3fdb.js"><link rel="prefetch" href="/tech-document/assets/js/36.7c36a2b2.js"><link rel="prefetch" href="/tech-document/assets/js/37.9fe3962f.js"><link rel="prefetch" href="/tech-document/assets/js/38.801fc783.js"><link rel="prefetch" href="/tech-document/assets/js/39.7ab96b92.js"><link rel="prefetch" href="/tech-document/assets/js/4.421de8f7.js"><link rel="prefetch" href="/tech-document/assets/js/5.e1da5320.js"><link rel="prefetch" href="/tech-document/assets/js/7.d184bea1.js"><link rel="prefetch" href="/tech-document/assets/js/8.2c29bf57.js"><link rel="prefetch" href="/tech-document/assets/js/9.b981948b.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.f73dcc99.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>React</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/react/" aria-current="page" class="sidebar-link">React中小知识点</a></li><li><a href="/tech-document/react/0浅谈副作用.html" class="sidebar-link">浅谈React副作用</a></li><li><a href="/tech-document/react/1浅谈Fiber是什么，解决了什么问题.html" class="active sidebar-link">浅谈Fiber是什么，解决了什么问题</a></li><li><a href="/tech-document/react/2浅谈Fiber架构下React是如何更新的.html" class="sidebar-link">浅谈Fiber架构下React是如何更新的</a></li><li><a href="/tech-document/react/3浅谈ReactFiber是如何实现更新过程可控.html" class="sidebar-link">浅谈React Fiber是如何实现更新过程可控</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <h2 id="fiber-是一个执行单元"><a href="#fiber-是一个执行单元" class="header-anchor">#</a> Fiber 是一个执行单元</h2> <p>React 是把任务拆分成很多小任务块（Fiber），然后通过调度来控制他们的运行时机；</p> <p>其实可以理解成一个执行单元，每次执行一个执行单元，就会检查这一帧还剩余多少时间，如果没有就将控制权交换给浏览器，如果有就接着运行执行单元。</p> <p><strong>抛出了一个问题 JS 怎么知道运行的这一帧还剩余多少时间呢?</strong> 后面会讲到</p> <h2 id="fiber-是一种数据结构"><a href="#fiber-是一种数据结构" class="header-anchor">#</a> Fiber 是一种数据结构</h2> <p>它是一个链表结构</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">FiberNode</span><span class="token punctuation">(</span>
+  tag<span class="token operator">:</span> WorkTag<span class="token punctuation">,</span>
+  pendingProps<span class="token operator">:</span> mixed<span class="token punctuation">,</span>
+  key<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  mode<span class="token operator">:</span> TypeOfMode
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Instance</span>
+
+  <span class="token comment">// tag 组件的类型 是函数组件还是类组件</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>tag <span class="token operator">=</span> tag<span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key<span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>elementType <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 对于 函数组件，指函数本身，对于类组件，指class</span>
+  <span class="token class-name"><span class="token keyword">this</span></span><span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Fiber对应的真实DOM节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>stateNode <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 以下属性用于连接其他Fiber节点形成Fiber树。</span>
+
+  <span class="token comment">// 指向父fiber节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>return <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 指向第一个子fiber节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>child <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 指向第一个兄弟fiber节点</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>sibling <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 真实的DOM属性</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>ref <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 新传入的 props</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>pendingProps <span class="token operator">=</span> pendingProps<span class="token punctuation">;</span>
+
+  <span class="token comment">// 之前的 props</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>memoizedProps <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 更新队列，用于暂存 setState 的值</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>updateQueue <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 之前的 state</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>memoizedState <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>dependencies <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>mode <span class="token operator">=</span> mode<span class="token punctuation">;</span>
+
+  <span class="token comment">// 保存本次更新会造成的DOM操作。比如删除，移动</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>flags <span class="token operator">=</span> NoFlags<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>nextEffect <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>firstEffect <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>lastEffect <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>lanes <span class="token operator">=</span> NoLanes<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>childLanes <span class="token operator">=</span> NoLanes<span class="token punctuation">;</span>
+
+  <span class="token comment">//用于链接新树和旧树；旧-&gt;新，新-&gt;旧</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>alternate <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="从示例看一下-fiber-之间是如何连接的"><a href="#从示例看一下-fiber-之间是如何连接的" class="header-anchor">#</a> 从示例看一下 Fiber 之间是如何连接的</h3> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>parent<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      parent文本
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>child1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        child1文本
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>grandChildren1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>child2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">child2文本</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> content<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/tech-document/assets/img/a9a511192e2a4d3a8680106a2432178a.6caabe4c.png" alt="a9a511192e2a4d3a8680106a2432178a"></p> <h2 id="fiber-解决了什么问题"><a href="#fiber-解决了什么问题" class="header-anchor">#</a> Fiber 解决了什么问题？</h2> <p>在 React16 之前采用的<code>Stack Reconciler</code>的更新机制，浏览器从执行栈的顶层开始递归，一层一层的执行，直到栈被清空了，这个更新才会停止。而我们直到递归是不能中断的，这就会导致一个问题，如果我们组件嵌套的很深的话，每一次触发更新，都需要把执行栈一次性执行完毕，中途不能执行其它的操作，这样就会存在页面卡顿的情况。</p> <p>在 React16 之后实现了一套新的更新机制，让 React 的更新操作变得可控，从递归变成了遍历，也就是运用上面的链表结构，采用循环的形式进行更新。</p> <h2 id="js-怎么知道这一帧还剩余多少时间"><a href="#js-怎么知道这一帧还剩余多少时间" class="header-anchor">#</a> JS 怎么知道这一帧还剩余多少时间？</h2> <p>要理解这个问题，首先需要知道浏览器这一帧做了什么事情。</p> <p><img src="/tech-document/assets/img/08bdb1f864dd4ab984bdd359d021b46c.664c58d4.png" alt="08bdb1f864dd4ab984bdd359d021b46c"></p> <p>从上图最后一步可以看出，这一帧可能存在空闲时间，但是我们怎么知道有没有空闲时间呢。这里就谈到一个 api<code>requestIdleCallback</code></p> <p>MDN 官方解释：</p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback" target="_blank" rel="noopener noreferrer">MDN---requestIdleCallback<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>window.requestIdleCallback()方法插入一个函数，这个函数将在浏览器空闲时期被调用。这使开发者能够在主事件循环上执行后台和低优先级工作，而不会影响延迟关键事件，如动画和输入响应。函数一般会按先进先调用的顺序执行，然而，如果回调函数指定了执行超时时间 timeout，则有可能为了在超时前执行函数而打乱执行顺序。</p> <h3 id="react-是如何利用这个空闲时间呢"><a href="#react-是如何利用这个空闲时间呢" class="header-anchor">#</a> React 是如何利用这个空闲时间呢？</h3> <ol><li>询问浏览器是否存在空闲时间。</li> <li>如果有，就开始执行任务，判断是否有下一个执行任务，如果有就执行，没有就把控制权交还给浏览器。</li> <li>执行完再来判断是否还有时间，如果有接着执行下一个任务，没有就把控制权交还给浏览器。</li></ol> <p>具体流程如下图：</p> <p><img src="/tech-document/assets/img/1676425353109.45a2a155.png" alt="1676425353109"></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/react/0浅谈副作用.html" class="prev">
+        浅谈React副作用
+      </a></span> <span class="next"><a href="/tech-document/react/2浅谈Fiber架构下React是如何更新的.html">
+        浅谈Fiber架构下React是如何更新的
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/tech-document/assets/js/app.905cf5c4.js" defer></script><script src="/tech-document/assets/js/2.e5db50c3.js" defer></script><script src="/tech-document/assets/js/6.f2105fa9.js" defer></script><script src="/tech-document/assets/js/10.a379b57f.js" defer></script>
+  </body>
+</html>
