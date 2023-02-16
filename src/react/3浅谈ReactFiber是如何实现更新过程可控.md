@@ -48,9 +48,9 @@ ReactDom.render(jsx, document.getElementById("root"));
 
 - **currentFiber tree**
 
-  指的是上一次渲染构建的 fiber 树，在每次更新完成过后会把 `workInProgress tree` 赋值给`currentFiber tree`，两颗树上面的 fiber 节点是通过`alternate`属性进行联系的。具体可以看[fiber 数据结构](/react/1浅谈Fiber是什么，解决了什么问题.html#fiber-是一种数据结构)
+  指的是上一次渲染构建的 fiber 树，在每次更新完成过后会把 `workInProgress tree` 赋值给`currentFiber tree`，两颗树上面的 fiber 节点是通过`alternate`属性进行联系的。
 
-  在新的`workInProgress tree`的构建过程中，会和`currentFiber tree`对应的节点进行 diff 比较，收集副作用([什么是副作用](/react/0浅谈副作用.html))。如果 fiber 节点没有什么变化，那就直接复用和 `currentFiber tree` 对应的节点，减少创建对象带来的开销。也就是说**无论是创建还是更新、挂起、恢复以及终止操作都是发生在 workInProgress tree 创建过程中的**。
+  在新的`workInProgress tree`的构建过程中，会和`currentFiber tree`对应的节点进行 diff 比较，收集副作用。如果 fiber 节点没有什么变化，那就直接复用和 `currentFiber tree` 对应的节点，减少创建对象带来的开销。也就是说**无论是创建还是更新、挂起、恢复以及终止操作都是发生在 workInProgress tree 创建过程中的**。
   `workInProgress tree` 构建过程其实就是循环的执行任务和创建下一个任务。
 
 ## 任务具备优先级
