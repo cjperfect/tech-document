@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>margin-left auto元素为什么可以右对齐 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.0b0c762f.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.c7079068.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.729cb599.js" as="script"><link rel="preload" href="/tech-document/assets/js/11.5ba380e8.js" as="script"><link rel="preload" href="/tech-document/assets/js/10.b7e33e05.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/12.bc7c0542.js"><link rel="prefetch" href="/tech-document/assets/js/13.3866d401.js"><link rel="prefetch" href="/tech-document/assets/js/14.2868c5a5.js"><link rel="prefetch" href="/tech-document/assets/js/15.8cff1759.js"><link rel="prefetch" href="/tech-document/assets/js/16.57ec73a7.js"><link rel="prefetch" href="/tech-document/assets/js/17.d21d2459.js"><link rel="prefetch" href="/tech-document/assets/js/18.ac1796e3.js"><link rel="prefetch" href="/tech-document/assets/js/19.a62342d8.js"><link rel="prefetch" href="/tech-document/assets/js/20.5a53b6d5.js"><link rel="prefetch" href="/tech-document/assets/js/21.43e7d64b.js"><link rel="prefetch" href="/tech-document/assets/js/22.fe56830f.js"><link rel="prefetch" href="/tech-document/assets/js/23.34ee7485.js"><link rel="prefetch" href="/tech-document/assets/js/24.8531e6b7.js"><link rel="prefetch" href="/tech-document/assets/js/25.6aae55ce.js"><link rel="prefetch" href="/tech-document/assets/js/26.feb9f164.js"><link rel="prefetch" href="/tech-document/assets/js/27.59416053.js"><link rel="prefetch" href="/tech-document/assets/js/28.306c2c29.js"><link rel="prefetch" href="/tech-document/assets/js/29.31c74437.js"><link rel="prefetch" href="/tech-document/assets/js/3.a62ce490.js"><link rel="prefetch" href="/tech-document/assets/js/30.e076ff74.js"><link rel="prefetch" href="/tech-document/assets/js/31.703d7cd4.js"><link rel="prefetch" href="/tech-document/assets/js/32.54f224d0.js"><link rel="prefetch" href="/tech-document/assets/js/33.0b7e1162.js"><link rel="prefetch" href="/tech-document/assets/js/34.388dce17.js"><link rel="prefetch" href="/tech-document/assets/js/35.30cb9338.js"><link rel="prefetch" href="/tech-document/assets/js/36.65da117f.js"><link rel="prefetch" href="/tech-document/assets/js/37.ec980b90.js"><link rel="prefetch" href="/tech-document/assets/js/38.c0bc0063.js"><link rel="prefetch" href="/tech-document/assets/js/39.a77601f1.js"><link rel="prefetch" href="/tech-document/assets/js/4.582cf130.js"><link rel="prefetch" href="/tech-document/assets/js/40.a03616bb.js"><link rel="prefetch" href="/tech-document/assets/js/41.5c6e7b71.js"><link rel="prefetch" href="/tech-document/assets/js/5.313d1bbc.js"><link rel="prefetch" href="/tech-document/assets/js/6.fc0341ae.js"><link rel="prefetch" href="/tech-document/assets/js/7.1702a7d8.js"><link rel="prefetch" href="/tech-document/assets/js/8.81f42ac9.js"><link rel="prefetch" href="/tech-document/assets/js/9.ef26edcc.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.0b0c762f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link router-link-active">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link router-link-active">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>HTML/CSS</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/css/" aria-current="page" class="sidebar-link">行内元素和块级元素的区别</a></li><li><a href="/tech-document/css/HTML的colgroup标签.html" class="sidebar-link">HTML的colgroup标签</a></li><li><a href="/tech-document/css/margin-left auto元素为什么可以右对齐.html" class="active sidebar-link">margin-left auto元素为什么可以右对齐</a></li><li><a href="/tech-document/css/script 标签中 defer 和 async 的区别.html" class="sidebar-link">script 标签中 defer 和 async 的区别</a></li><li><a href="/tech-document/css/对 CSS Sprites图的理解.html" class="sidebar-link">CSS Sprites图的理解</a></li><li><a href="/tech-document/css/对line-height 的理解及其赋值方式.html" class="sidebar-link">对line-height 的理解及其赋值方式</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <h2 id="先回顾一下元素居右的其中方式"><a href="#先回顾一下元素居右的其中方式" class="header-anchor">#</a> 先回顾一下元素居右的其中方式</h2> <ol><li>flex布局的justify-content: flex-end</li> <li>定位</li> <li>float浮动</li> <li>grid网格布局</li> <li>margin-left: auto</li></ol> <p>前四种居右方式是我们开发中常用的，但是为什么<code>margin-left:auto</code>也可以实现呢。</p> <h2 id="测试一下"><a href="#测试一下" class="header-anchor">#</a> 测试一下</h2> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+      <span class="token selector">.box</span> <span class="token punctuation">{</span>
+        <span class="token property">border</span><span class="token punctuation">:</span> 1px solid orangered<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token selector">.child</span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+        <span class="token property">margin-left</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>child<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAAxCAYAAAA2lHnyAAAA/klEQVR4nO3YsQ3CUAxAQYKYLWtB1krPXJ8WRCQaSCTeXWm5cPUKT2OMcQIg4Xz0AQDsR/QBQi6b03na+QwAfmJ9/eBvR39jEeCTZVmOPoEn1/vtbea9AxAi+gAhog8QIvoAIaIPECL6ACGiDxAi+gAhog8QIvoAIaIPECL6ACGiDxAi+gAhog8QIvoAIaIPECL6ACGiDxAi+gAhog8QIvoAIaIPECL6ACGiDxAi+gAhog8QIvoAIaIPECL6ACGiDxAi+gAhog8QIvoAIaIPECL6ACGiDxAi+gAhog8QMo0xxtt0ng44BYCvW18Tvx19AP6S9w5AiOgDhIg+QMgDyyUVWDtLDxsAAAAASUVORK5CYII=" alt="1677484292456"></p> <p>发现确实可以。</p> <h2 id="分析"><a href="#分析" class="header-anchor">#</a> 分析</h2> <ol><li><p>首先需要分析块级元素的宽度是如何计算</p> <p><code>'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' = width of containing block</code></p> <p>我们从上面的代码可知，除了<code>width</code>以外，其它属性都是值都是0。</p></li> <li><p>当且仅当其中某一个属性为auto（计算属性）时，这个auto值就是令等式成立的值。</p></li> <li><p>最后一条，当margin-left和margin-right都为auto时，两者就会一样，从而使元素居中（也就是我们平时经常通过<code>margin: 0 auto;</code>来实现元素的居中）</p></li></ol> <h2 id="官网描述"><a href="#官网描述" class="header-anchor">#</a> 官网描述</h2> <p><a href="https://www.w3.org/TR/CSS2/visudet.html#blockwidth" target="_blank" rel="noopener noreferrer">https://www.w3.org/TR/CSS2/visudet.html#blockwidth<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><img src="/tech-document/assets/img/1677484724356.8071a767.png" alt="1677484724356"></p> <p>参考文档：</p> <ul><li><a href="https://blog.csdn.net/sinat_36521655/article/details/103394464" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/sinat_36521655/article/details/103394464<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/css/HTML的colgroup标签.html" class="prev">
+        HTML的colgroup标签
+      </a></span> <span class="next"><a href="/tech-document/css/script 标签中 defer 和 async 的区别.html">
+        script 标签中 defer 和 async 的区别
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/tech-document/assets/js/app.c7079068.js" defer></script><script src="/tech-document/assets/js/2.729cb599.js" defer></script><script src="/tech-document/assets/js/11.5ba380e8.js" defer></script><script src="/tech-document/assets/js/10.b7e33e05.js" defer></script>
+  </body>
+</html>
