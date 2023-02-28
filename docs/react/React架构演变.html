@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React架构演变 | 技术文档</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="technology-review">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/tech-document/assets/css/0.styles.0e97718b.css" as="style"><link rel="preload" href="/tech-document/assets/js/app.a4787dc9.js" as="script"><link rel="preload" href="/tech-document/assets/js/2.31c261ae.js" as="script"><link rel="preload" href="/tech-document/assets/js/4.d57b4311.js" as="script"><link rel="preload" href="/tech-document/assets/js/11.7f1af717.js" as="script"><link rel="prefetch" href="/tech-document/assets/js/10.88057c86.js"><link rel="prefetch" href="/tech-document/assets/js/12.dd2f384b.js"><link rel="prefetch" href="/tech-document/assets/js/13.7b64ec0b.js"><link rel="prefetch" href="/tech-document/assets/js/14.22dc1a58.js"><link rel="prefetch" href="/tech-document/assets/js/15.35133f92.js"><link rel="prefetch" href="/tech-document/assets/js/16.fd146822.js"><link rel="prefetch" href="/tech-document/assets/js/17.cd555fca.js"><link rel="prefetch" href="/tech-document/assets/js/18.34c14973.js"><link rel="prefetch" href="/tech-document/assets/js/19.4f4ee595.js"><link rel="prefetch" href="/tech-document/assets/js/20.a74fbacb.js"><link rel="prefetch" href="/tech-document/assets/js/21.fa6df9dd.js"><link rel="prefetch" href="/tech-document/assets/js/22.7ecfff1e.js"><link rel="prefetch" href="/tech-document/assets/js/23.dd179a2d.js"><link rel="prefetch" href="/tech-document/assets/js/24.61b61bfa.js"><link rel="prefetch" href="/tech-document/assets/js/25.48e356cf.js"><link rel="prefetch" href="/tech-document/assets/js/26.2ba46e6c.js"><link rel="prefetch" href="/tech-document/assets/js/27.2b294573.js"><link rel="prefetch" href="/tech-document/assets/js/28.22043847.js"><link rel="prefetch" href="/tech-document/assets/js/29.025f0a10.js"><link rel="prefetch" href="/tech-document/assets/js/3.8c67c116.js"><link rel="prefetch" href="/tech-document/assets/js/30.ffd662d8.js"><link rel="prefetch" href="/tech-document/assets/js/31.1f1c1a53.js"><link rel="prefetch" href="/tech-document/assets/js/32.7bbd73df.js"><link rel="prefetch" href="/tech-document/assets/js/33.99298258.js"><link rel="prefetch" href="/tech-document/assets/js/34.cc3d22ae.js"><link rel="prefetch" href="/tech-document/assets/js/35.372cf764.js"><link rel="prefetch" href="/tech-document/assets/js/36.5cee382b.js"><link rel="prefetch" href="/tech-document/assets/js/37.0f2be906.js"><link rel="prefetch" href="/tech-document/assets/js/38.65e43c41.js"><link rel="prefetch" href="/tech-document/assets/js/39.632ee091.js"><link rel="prefetch" href="/tech-document/assets/js/40.b04d87ab.js"><link rel="prefetch" href="/tech-document/assets/js/41.c8712ff8.js"><link rel="prefetch" href="/tech-document/assets/js/42.4d7f12c4.js"><link rel="prefetch" href="/tech-document/assets/js/43.9a7af3d6.js"><link rel="prefetch" href="/tech-document/assets/js/5.09d1181c.js"><link rel="prefetch" href="/tech-document/assets/js/6.97ecbcd6.js"><link rel="prefetch" href="/tech-document/assets/js/7.77de1150.js"><link rel="prefetch" href="/tech-document/assets/js/8.7fa955d7.js"><link rel="prefetch" href="/tech-document/assets/js/9.45950848.js">
+    <link rel="stylesheet" href="/tech-document/assets/css/0.styles.0e97718b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tech-document/" class="home-link router-link-active"><!----> <span class="site-name">技术文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/tech-document/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/tech-document/archive/" class="nav-link">
+  文章归档
+</a></div><div class="nav-item"><a href="/tech-document/css/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/tech-document/javascript/" class="nav-link">
+  Javascript
+</a></div><div class="nav-item"><a href="/tech-document/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/tech-document/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/tech-document/typescript/" class="nav-link">
+  Typescript
+</a></div><div class="nav-item"><a href="/tech-document/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/tech-document/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/tech-document/network/" class="nav-link">
+  网络知识
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人博客" class="dropdown-title"><span class="title">个人博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人博客" class="mobile-dropdown-title"><span class="title">个人博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/qq_39583550" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://cjperfect.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人工具
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>React</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech-document/react/" aria-current="page" class="sidebar-link">React中小知识点</a></li><li><a href="/tech-document/react/0浅谈副作用.html" class="sidebar-link">浅谈React副作用</a></li><li><a href="/tech-document/react/1浅谈Fiber是什么，解决了什么问题.html" class="sidebar-link">浅谈Fiber是什么，解决了什么问题</a></li><li><a href="/tech-document/react/2浅谈Fiber架构下React是如何更新的.html" class="sidebar-link">浅谈Fiber架构下React是如何更新的</a></li><li><a href="/tech-document/react/3浅谈ReactFiber是如何实现更新过程可控.html" class="sidebar-link">浅谈React Fiber如何实现更新过程可控</a></li><li><a href="/tech-document/react/Fiber工作原理.html" class="sidebar-link">浅谈React Fiber工作原理</a></li><li><a href="/tech-document/react/React架构演变.html" class="active sidebar-link">React架构演变</a></li><li><a href="/tech-document/react/阅读React源码前的序章.html" class="sidebar-link">阅读React源码前的序章</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="custom-header" data-v-46893521><h1 class="title" data-v-46893521></h1> <div class="name" data-v-46893521>
+    作者:
+    <span data-v-46893521></span></div> <div class="categories" data-v-46893521>
+    分类:
+    </div> <div class="tags" data-v-46893521>
+    标签:
+    </div> <div class="date" data-v-46893521>
+    创建时间:
+    <span data-v-46893521></span></div></div> <h2 id="老版-react-架构"><a href="#老版-react-架构" class="header-anchor">#</a> 老版 React 架构</h2> <p>React 16 之前的架构</p> <p>其实就分为两个部分：</p> <ul><li>Reconciler 协调器</li> <li>Render 渲染器</li></ul> <p><code>Reconciler协调器</code>负责本次更新有什么组件需要被渲染，diff 算法就发生在这个步骤中，在 diff 算法中会将上次更新的组件和本次更新的组件做一个对比，判定出本次需要更新的组件会交给<code>Render（渲染器）</code>渲染到视图中，不同的渲染器会将组件渲染到不同的宿主环境的视图中。</p> <p><img src="/tech-document/assets/img/1677586449654.4b252cff.png" alt="1677586449654"></p> <h2 id="新版-react-架构"><a href="#新版-react-架构" class="header-anchor">#</a> 新版 React 架构</h2> <p>分为三大部分：</p> <ul><li>Scheduler 调度器</li> <li>Reconciler 协调器</li> <li>Render 渲染器</li></ul> <p>在新的架构中，更新首先会被<code>调度器</code>处理，<code>调度器</code>会调度这些更新的优先级，更高优的更新会首先进入<code>协调器</code>，在<code>协调器</code>正在进行 diff 算法时，如果出现更高优先级的更新，那么正在协调的更新会被中断，由于<code>调度器</code>和<code>协调器</code>的工作都是在内存中工作，不会执行具体的视图操作，因此出现了中断发生，用户也不会看到更新不完全的视图。当某次更新完成了在<code>协调器</code>中的工作时，<code>协调器</code>会通知<code>渲染器</code>本次更新有哪些组件需要执行对应的视图操作，最后由<code>渲染器</code>来执行这些视图操作，后面就是重复执行整个流程。</p> <p><img src="/tech-document/assets/img/1677587038622.06698b6e.png" alt="1677587038622"></p> <h2 id="解析新版-react-架构的示例"><a href="#解析新版-react-架构的示例" class="header-anchor">#</a> 解析新版 React 架构的示例</h2> <p>代码很简单，就是点击一个按钮让每个数字乘法运算，最终效果如下：</p> <ul><li>1 -&gt; 2</li> <li>2 -&gt; 4</li> <li>3 -&gt; 6</li></ul> <p><img src="/tech-document/assets/img/2.098467ac.gif" alt="2"></p> <h3 id="分析"><a href="#分析" class="header-anchor">#</a> 分析</h3> <p><img src="/tech-document/assets/img/1677587803433.52bcb65a.png" alt="1677587803433"></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech-document/react/Fiber工作原理.html" class="prev">
+        浅谈React Fiber工作原理
+      </a></span> <span class="next"><a href="/tech-document/react/阅读React源码前的序章.html">
+        阅读React源码前的序章
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/tech-document/assets/js/app.a4787dc9.js" defer></script><script src="/tech-document/assets/js/2.31c261ae.js" defer></script><script src="/tech-document/assets/js/4.d57b4311.js" defer></script><script src="/tech-document/assets/js/11.7f1af717.js" defer></script>
+  </body>
+</html>
