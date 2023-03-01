@@ -102,7 +102,7 @@ function FiberNode(tag: WorkTag, pendingProps: mixed, key: null | string, mode: 
 
 ## 动态的工作单元
 
-Fiber 可以理解成一个工作单元，每次执行完一个工作单元，react 就会检查还剩余多少时间，如果没有就把控制权交还给浏览器。React Fiber 月浏览器的核心交互过程如下：
+Fiber 可以理解成一个工作单元，每次执行完一个工作单元，react 就会检查还剩余多少时间，如果没有就把控制权交还给浏览器。React Fiber 与浏览器的核心交互过程如下：
 
 ![undefined](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/78a602cbc87342628ace49abb5d20c39~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
 
@@ -110,7 +110,7 @@ Fiber 可以理解成一个工作单元，每次执行完一个工作单元，re
 
 Fiber 可以被理解为划分一个个更小的工作单元，它是把一个大任务拆分为了很多个小块任务，一个小块任务的执行必须是一次完成的，不能出现暂停，但是一个小块任务执行完后可以移交控制权给浏览器去响应用户，从而不用等待大任务一直执行完成再去响应用户。
 
-## 双缓存工作机制
+## 架构（双缓存工作机制）
 
 ### 什么是双缓存
 
@@ -139,3 +139,49 @@ workInProgressFiber.alternate === currentFiber;
 React 的根节点（FiberRootNode）通过 current 指针在不同的 Fiber 树的 rootFiber 间切换来实现 Fiber 树的切换。
 
 ![动画](./images/animate.gif)
+
+#### Fiber 树的构建（挂载阶段、更新阶段）
+
+再次强调：FiberRootNode 有且仅有一个，而 rootFiber 可以有多个，因为我们可以挂载多个应用（也就是多次调用`ReactDOM.render`）
+
+以下代码为例：
+
+```js
+function App(props) {
+  const [age, setAge] = useState(24);
+  return (
+    <div
+      onClick={() => {
+        setAge(25);
+      }}
+    >
+      {age}
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+**挂载阶段（mount 阶段）**
+
+当`首次调用ReactDOM.render`就会创建`FiberRootNode`，每次调用`ReactDOM.render`就会创建当前应用的根节点`RootFiber`，由于在首屏渲染之前页面是空白的，因此`RootFiber`不存在子节点。
+
+![1677676221915](./images/1677676221915.png)
+
+**挂载阶段流程如下（首屏渲染）**
+
+首先创建 fiber 树的根节点`RootFiber`，在两棵树之间都存在的 Fiber 节点用`alternate`连接，接下来采用深度遍历的方式创建 Fiber 树，当`workInProgress Fiber tree`完成了渲染，最后 FiberRootNode 的 current 指针就指向`workInProgress Fiber tree`的根节点，此时就变成`current Fiber tree`。
+
+![animate](./images/animate-1677677631515.gif)
+
+**更新阶段 （update 阶段）**
+
+每次触发更新都会重新创建一颗`workInProgress Fiber Tree`，`current Fiber`与本次更新返回的`JSX`做对比，生成`workInProgress Fiber`的过程就是 diff 算法，update 阶段与 mount 阶段，最大的区别就是是否有 diff 算法。
+
+![animate](./images/animate-1677679212081.gif)
+
+参考文章：
+
+- [https://juejin.cn/post/6844904202104209415](https://juejin.cn/post/6844904202104209415)
+- [https://juejin.cn/post/6943896410987659277](https://juejin.cn/post/6943896410987659277)
